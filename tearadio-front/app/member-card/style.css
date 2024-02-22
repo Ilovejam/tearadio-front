@@ -1,0 +1,60 @@
+.perspective {
+    perspective: 10000px;
+    
+  }
+  
+  .is-flipped {
+    transform: rotateY(180deg); /* Flip the card to show the back */
+  }
+  
+  /* Ensure the width, height, and margin are the same as the inline styles in your component */
+  .card {
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    width: 80vw;
+    height: 60vh;
+    margin: 2rem auto;
+  }
+  
+  .card:hover {
+    transform: rotateY(10deg); /* Slight rotate effect on hover for 3D feel */
+  }
+  
+  .card > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .card .card-back {
+    transform: rotateY(180deg);
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .back-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .back-content img {
+    max-width: 50%;
+    max-height: 50%;
+    object-fit: cover;
+  }
+  
+  .text-section {
+    text-align: center;
+  }
+  
