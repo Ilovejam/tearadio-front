@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    images: {
+      domains: ['pbs.twimg.com'],
+    },
+    // Diğer yapılandırmalarınız buraya eklenebilir
+  };
+  
+  export default nextConfig;
+  

@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import { BellIcon, CogIcon } from '@heroicons/react/24/outline'; // Bell ve Cog ikonlarını ekliyorum
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar: React.FC = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -19,10 +20,12 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center py-3">
           {/* Sol taraftaki QR ikonu */}
           <Link href='/'>
-            <img 
+            <Image 
               src="https://pbs.twimg.com/profile_images/610939586571825152/8JWXGIFM_400x400.jpg" 
               alt="Logo"
               className="h-10 w-10 object-cover rounded-full cursor-pointer" 
+              width={400}
+              height={400}
             />
           </Link>
           {/* Sağ taraftaki ikonlar */}

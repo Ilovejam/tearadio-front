@@ -9,6 +9,7 @@ export default function Home() {
         title="Digital Member Passport" 
         subtitle="MEMBERSHIP" 
         imageUrl="/profile.jpg"
+        
       />
     </main>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeartIcon, ShareIcon, EyeIcon } from '@heroicons/react/24/outline';
 import Navbar from '../components/Navbar';
+import Image from 'next/image';
 
 const Messages = () => {
   return (
@@ -13,10 +14,12 @@ const Messages = () => {
         <div className="bg-gray-100 p-4 rounded-lg">
             {/* Header with profile picture and welcome message */}
             <div className="flex items-center">
-                <img
+                <Image
                 className="rounded-full h-12 w-12 object-cover mr-3"
                 src="https://pbs.twimg.com/profile_images/610939586571825152/8JWXGIFM_400x400.jpg" 
                 alt="Profile"
+                width={400}
+                height={400}
                 />
                 <div>
                 <p className="text-sm font-semibold">Park 14 Team</p>
@@ -27,7 +30,8 @@ const Messages = () => {
             {/* Post content */}
             <div className="flex items-center space-x-4">
     <div className="flex-shrink-0">
-      <img className="h-20 w-20 object-cover rounded-lg" src="/profile.jpg" alt="Profile" />
+      <Image className="h-20 w-20 object-cover rounded-lg" src="/profile.jpg" alt="Profile" width={400}
+                height={400}/>
     </div>
     <div className="flex-1">
       <p className="text-gray-900 font-semibold">
@@ -57,10 +61,12 @@ const Messages = () => {
         <div className="bg-gray-100 p-4 rounded-lg">
             {/* Header with profile picture and welcome message */}
             <div className="flex items-center">
-                <img
+                <Image
                 className="rounded-full h-12 w-12 object-cover mr-3"
                 src="https://pbs.twimg.com/profile_images/610939586571825152/8JWXGIFM_400x400.jpg" 
                 alt="Profile"
+                width={400}
+                height={400}
                 />
                 <div>
                 <p className="text-sm font-semibold">Park 14 Team</p>
@@ -71,7 +77,8 @@ const Messages = () => {
             {/* Post content */}
             <div className="flex items-center space-x-4">
     <div className="flex-shrink-0">
-      <img className="h-20 w-20 object-cover rounded-lg" src="/profile.jpg" alt="Profile" />
+      <Image className="h-20 w-20 object-cover rounded-lg" src="/profile.jpg" alt="Profile" width={400}
+                height={400}/>
     </div>
     <div className="flex-1">
       <p className="text-gray-900 font-semibold">
@@ -101,10 +108,12 @@ const Messages = () => {
         <div className="bg-gray-100 p-4 rounded-lg">
             {/* Header with profile picture and welcome message */}
             <div className="flex items-center">
-                <img
+                <Image
                 className="rounded-full h-12 w-12 object-cover mr-3"
                 src="https://pbs.twimg.com/profile_images/610939586571825152/8JWXGIFM_400x400.jpg" 
                 alt="Profile"
+                width={400}
+                height={400}
                 />
                 <div>
                 <p className="text-sm font-semibold">Park 14 Team</p>
@@ -115,7 +124,8 @@ const Messages = () => {
             {/* Post content */}
             <div className="flex items-center space-x-4">
     <div className="flex-shrink-0">
-      <img className="h-20 w-20 object-cover rounded-lg" src="/profile.jpg" alt="Profile" />
+      <Image className="h-20 w-20 object-cover rounded-lg" src="/profile.jpg" alt="Profile" width={400}
+                height={400}/>
     </div>
     <div className="flex-1">
       <p className="text-gray-900 font-semibold">

@@ -3,6 +3,7 @@
 "use client";
 import React, { useState } from 'react';
 import './style.css'; // Bu dosyada kartın stilini belirleyin
+import Image from 'next/image';
 
 interface MemberCardProps {
   title: string;
@@ -52,7 +53,8 @@ const MemberCard: React.FC<MemberCardProps> = ({ title, subtitle, imageUrl }) =>
 
         {/* Kartın ön yüzü */}
         <div className="card-face card-front" style={{ height: '70vh' }}>
-          <img className="w-full h-full object-cover" src={imageUrl} alt={title} />
+          <Image className="w-full h-full object-cover" src={imageUrl} alt={title} width={400}
+                height={400} />
           <div className="absolute inset-0 flex flex-col justify-between p-4">
             <div className="text-center">
               <p className="text-white text-lg md:text-2xl font-semibold">{title}</p>
@@ -66,8 +68,8 @@ const MemberCard: React.FC<MemberCardProps> = ({ title, subtitle, imageUrl }) =>
         {/* Kartın arka yüzü */}
         <div className="card-face card-back flex items-center justify-center relative">
           <div className="absolute inset-0 bg-white bg-opacity-50 blur-sm"></div>
-            <img className="w-full h-full object-cover" src={imageUrl} alt="Profile" />
-            <img className="w-24 h-24 absolute" src='https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg' alt="QR Code" />
+            <Image className="w-full h-full object-cover" src={imageUrl} width={400} height={400} alt="Profile" />
+            <Image className="w-24 h-24 absolute" src='https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg' width={400} height={400} alt="QR Code" />
             <div className="absolute bottom-0 w-full text-center  bg-white">
                 <div className="flex items-center justify-between  bg-white border-2 border-red-500">
         {/* Sol taraf - Hero Icon */}
