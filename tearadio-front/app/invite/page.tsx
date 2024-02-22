@@ -76,7 +76,7 @@ const Invite = () => {
 
           <div>
             <label htmlFor="notes" className="block text-sm font-medium text-gray-700">Notes</label>
-            <textarea id="notes" rows="3" className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Share any important feedback."></textarea>
+            <textarea id="notes" rows={3} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Share any important feedback."></textarea>
           </div>
           <div>
           <Link href="/thankyou" passHref>
