@@ -34,9 +34,10 @@ const Messages = () => {
                 height={400}/>
     </div>
     <div className="flex-1">
-      <p className="text-gray-900 font-semibold">
-        We're thrilled to announce that Erica has joined the Park14 Team! Her passion, skill, and creativity will be invaluable to our projects. Let's give her a warm welcome! 🌟 #NewMember #TeamGrowth
-      </p>
+    <p className="text-gray-900 font-semibold">
+  We&apos;re thrilled to announce that Erica has joined the Park14 Team! Her passion, skill, and creativity will be invaluable to our projects. Let&apos;s give her a warm welcome! 🌟 #NewMember #TeamGrowth
+</p>
+
     </div>
   </div>
 
@@ -81,9 +82,10 @@ const Messages = () => {
                 height={400}/>
     </div>
     <div className="flex-1">
-      <p className="text-gray-900 font-semibold">
-        We're thrilled to announce that Erica has joined the Park14 Team! Her passion, skill, and creativity will be invaluable to our projects. Let's give her a warm welcome! 🌟 #NewMember #TeamGrowth
-      </p>
+    <p className="text-gray-900 font-semibold">
+  We&apos;re thrilled to announce that Erica has joined the Park14 Team! Her passion, skill, and creativity will be invaluable to our projects. Let&apos;s give her a warm welcome! 🌟 #NewMember #TeamGrowth
+</p>
+
     </div>
   </div>
 
@@ -128,9 +130,10 @@ const Messages = () => {
                 height={400}/>
     </div>
     <div className="flex-1">
-      <p className="text-gray-900 font-semibold">
-        We're thrilled to announce that Erica has joined the Park14 Team! Her passion, skill, and creativity will be invaluable to our projects. Let's give her a warm welcome! 🌟 #NewMember #TeamGrowth
-      </p>
+    <p className="text-gray-900 font-semibold">
+  We&apos;re thrilled to announce that Erica has joined the Park14 Team! Her passion, skill, and creativity will be invaluable to our projects. Let&apos;s give her a warm welcome! 🌟 #NewMember #TeamGrowth
+</p>
+
     </div>
   </div>
 
