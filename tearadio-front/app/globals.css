@@ -6,10 +6,10 @@
     --foreground-rgb: 0, 0, 0;
 
     /* Adjusted to a light turquoise tone */
-    --background-start-rgb: 191, 241, 241;
+    --background-start-rgb: white;
 
     /* Keeping the end color close to white */
-    --background-end-rgb: 255, 255, 255;
+    --background-end-rgb: white;
 }
 
 /* Removed the prefers-color-scheme: dark block */
