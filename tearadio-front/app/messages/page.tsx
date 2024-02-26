@@ -1,9 +1,10 @@
-"use client";
+'use client';
+
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
 
-const Messages: React.FC = () => {
+const Messages = () => {
   const [showImages, setShowImages] = useState(true);
 
   const handleClear = () => {
@@ -18,7 +19,7 @@ const Messages: React.FC = () => {
           <>
             <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               <Image
-                src={"/notification1.png"}
+                src="/notification1.png"
                 alt="First Notification"
                 width={500}
                 height={300}
@@ -28,7 +29,7 @@ const Messages: React.FC = () => {
             </div>
             <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               <Image
-                src={"/notification2.png"}
+                src="/notification2.png"
                 alt="Second Notification"
                 width={500}
                 height={300}
@@ -38,7 +39,7 @@ const Messages: React.FC = () => {
             </div>
             <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               <Image
-                src={"/notification3.png"}
+                src="/notification3.png"
                 alt="Third Notification"
                 width={500}
                 height={300}
