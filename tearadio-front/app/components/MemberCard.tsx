@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 type MemberCardProps = {
   membershipNumber: string;
   memberName: string;
@@ -22,10 +22,11 @@ const MemberCard: React.FC<MemberCardProps> = ({
       >
         {/* Logo with transparent background and shadow */}
         <div className="absolute bottom-6 left-4 p-2" style={{ background: 'rgba(255, 255, 255, 0.2)', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.5)', borderRadius: '10px' }}>
-          <img
+          <Image
             src="https://park14.com/wp-content/uploads/2021/06/ParkLogo-White.png"
             alt="Park Logo"
-            style={{ width: '60px', height: '36px' }} // Made the logo smaller and adjusted the size
+            width= {80}
+            height= {80}
           />
       </div>
 
@@ -37,10 +38,11 @@ const MemberCard: React.FC<MemberCardProps> = ({
 
         {/* QR Code aligned with the logo at the bottom */}
         <div className="absolute bottom-0 right-0 p-4">
-          <img
+          <Image
             src="https://media.istockphoto.com/id/828088276/vector/qr-code-illustration.jpg?s=612x612&w=0&k=20&c=FnA7agr57XpFi081ZT5sEmxhLytMBlK4vzdQxt8A70M="
             alt="QR Code"
-            style={{ width: '80px', height: '80px', }}
+            width= {80}
+            height= {80}
           />
         </div>
       </div>

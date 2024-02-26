@@ -38,11 +38,12 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Navbar />
-      <MemberCard 
-        title="Digital Member Passport" 
-        subtitle="MEMBERSHIP" 
-        imageUrl="/profile.jpg"
+      <MemberCard
+        membershipNumber="FB12344"
+        memberName="Freddie Brown"
+        memberSinceDate="Jan 1, 2024"
       />
+
     </main>
   );
 }
