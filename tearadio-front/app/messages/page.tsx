@@ -19,7 +19,7 @@ const Messages = () => {
           <>
             <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               <Image
-                src="/notification1.png"
+                src="https://i.ibb.co/hBW4YVM/Notification.png"
                 alt="First Notification"
                 width={500}
                 height={300}
@@ -29,7 +29,7 @@ const Messages = () => {
             </div>
             <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               <Image
-                src="/notification2.png"
+                src="https://i.ibb.co/x26TjS5/Notification-1.png"
                 alt="Second Notification"
                 width={500}
                 height={300}
@@ -39,7 +39,7 @@ const Messages = () => {
             </div>
             <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               <Image
-                src="/notification3.png"
+                src="https://i.ibb.co/zQsnfyL/Notification-2.png"
                 alt="Third Notification"
                 width={500}
                 height={300}
