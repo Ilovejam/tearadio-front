@@ -1,94 +1,47 @@
-// MemberCard.tsx
+import React from 'react';
 
-"use client";
-import React, { useState } from 'react';
-import './style.css'; // Bu dosyada kartın stilini belirleyin
-import Image from 'next/image';
+type MemberCardProps = {
+  membershipNumber: string;
+  memberName: string;
+  memberSinceDate: string;
+};
 
-interface MemberCardProps {
-  title: string;
-  subtitle: string;
-  imageUrl: string;
-}
-
-const MemberCard: React.FC<MemberCardProps> = ({ title, subtitle, imageUrl }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [transformStyle, setTransformStyle] = useState({});
-
-  const flipCard = () => {
-    setIsFlipped(!isFlipped);
-  };
-  
-
-  const onMouseMove = (e: React.MouseEvent) => {
-    const { clientX, clientY, currentTarget } = e;
-    const { top, left, width, height } = currentTarget.getBoundingClientRect();
-    const x = (clientX - (left + width / 2)) / 20;
-    const y = (clientY - (top + height / 2)) / 20;
-
-    setTransformStyle({
-      transform: `rotateY(${x}deg) rotateX(${y}deg)`,
-      transition: 'none',
-    });
-  };
-
-  const onMouseLeave = () => {
-    setTransformStyle({
-      transform: 'rotateY(0deg) rotateX(0deg)',
-      transition: 'transform 0.5s',
-    });
-  };
-
-  const cardStyle = isFlipped 
-    ? { ...transformStyle, transform: `rotateY(180deg)` } 
-    : transformStyle;
-
+const MemberCard: React.FC<MemberCardProps> = ({
+  membershipNumber,
+  memberName,
+  memberSinceDate,
+}) => {
   return (
-    <div className="perspective">
-      <div className="card rounded-lg" 
-           style={cardStyle}
-           onClick={flipCard} 
-           onMouseMove={onMouseMove} 
-           onMouseLeave={onMouseLeave}>
+    <div className="flex justify-center items-center">
+      <div
+        className="relative text-white p-6 rounded-lg shadow-lg overflow-hidden max-w-sm w-full"
+        style={{
+          background: 'linear-gradient(180deg, rgba(17,24,39,1) 0%, rgba(29,78,216,1) 100%)',
+          minHeight: '400px', // Set a minimum height for the card
+        }}
+      >
+        {/* Logo with transparent background and shadow */}
+        <div className="absolute bottom-6 left-4 p-2" style={{ background: 'rgba(255, 255, 255, 0.2)', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.5)', borderRadius: '10px' }}>
+          <img
+            src="https://park14.com/wp-content/uploads/2021/06/ParkLogo-White.png"
+            alt="Park Logo"
+            style={{ width: '60px', height: '36px' }} // Made the logo smaller and adjusted the size
+          />
+      </div>
 
-        {/* Kartın ön yüzü */}
-        <div className="card-face card-front" style={{ height: '70vh' }}>
-          <Image className="w-full h-full object-cover" src={imageUrl} alt={title} width={400}
-                height={400} />
-          <div className="absolute inset-0 flex flex-col justify-between p-4">
-            <div className="text-center">
-              <p className="text-white text-lg md:text-2xl font-semibold">{title}</p>
-            </div>
-            <div className="text-center">
-              <p className="text-white text-md md:text-xl">{subtitle}</p>
-            </div>
-          </div>
-        </div>
+        <div className="text-xl mb-2">THE PARK AT 14TH</div>
+        <div className="text-5xl font-semibold mb-2">FB12344</div>
+        <div className="text-sm mb-4">Membership Number</div>
+        <div className="text-3xl font-semibold mb-2">Freddie Brown</div>
+        <div className="text-md mb-4">Member since: Jan 1.2024</div>
 
-        {/* Kartın arka yüzü */}
-        <div className="card-face card-back flex items-center justify-center relative">
-          <div className="absolute inset-0 bg-white bg-opacity-50 blur-sm"></div>
-            <Image className="w-full h-full object-cover" src={imageUrl} width={400} height={400} alt="Profile" />
-            <Image className="w-24 h-24 absolute" src='https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg' width={400} height={400} alt="QR Code" />
-            <div className="absolute bottom-0 w-full text-center  bg-white">
-                <div className="flex items-center justify-between  bg-white border-2 border-red-500">
-        {/* Sol taraf - Hero Icon */}
-                        <div className="flex items-center justify-center w-12 h-12 bg-gray-200 rounded-full">
-                            {/* Rastgele bir HeroIcons ikonu burada svg formatında eklenmiştir */}
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                        </div>
-
-                        {/* Sağ taraf - Metinler */}
-                        <div className="flex-1 ml-4">
-                            <p className="text-lg font-semibold">Jamal Walker</p>
-                            <p className="text-sm">Member ID: FL4321</p>
-                            <p className="text-sm">Last Touchpoint: Jan 1, 2024 @ 17:14</p>
-                        </div>
-                    </div>
-
-            </div>
+        {/* QR Code aligned with the logo at the bottom */}
+        <div className="absolute bottom-0 right-0 p-4">
+          <img
+            src="https://media.istockphoto.com/id/828088276/vector/qr-code-illustration.jpg?s=612x612&w=0&k=20&c=FnA7agr57XpFi081ZT5sEmxhLytMBlK4vzdQxt8A70M="
+            alt="QR Code"
+            style={{ width: '80px', height: '80px', }}
+          />
         </div>
       </div>
     </div>
