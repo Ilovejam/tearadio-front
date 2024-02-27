@@ -1,29 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
+/* Setting up custom properties */
 :root {
     --foreground-rgb: 0, 0, 0;
-
-    /* Adjusted to a light turquoise tone */
-    --background-start-rgb: white;
-
-    /* Keeping the end color close to white */
-    --background-end-rgb: white;
+    --background-rgb: 255, 255, 255; /* white */
 }
-
-/* Removed the prefers-color-scheme: dark block */
 
 body {
     color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-color: rgb(var(--background-rgb)); /* Set background color to white */
 }
 
+/* Custom Utility Classes */
 @layer utilities {
     .text-balance {
         text-wrap: balance;
