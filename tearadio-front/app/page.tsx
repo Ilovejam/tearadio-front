@@ -39,12 +39,12 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <Navbar />
-      {/* <IdCard
+      <IdCard
         membershipNumber="FB12344"
         memberName="Freddie Brown"
         memberSinceDate="Jan 1, 2024"
-      /> */}
-       <div className="grid grid-cols-2 gap-4">
+      />
+       {/* <div className="grid grid-cols-2 gap-4">
        <MemberCard 
   color="blue" 
   memberName="Jamal Walker" 
@@ -79,7 +79,7 @@ export default function Home() {
 />
 
 
-      </div>
+      </div> */}
 
     </main>
   );
