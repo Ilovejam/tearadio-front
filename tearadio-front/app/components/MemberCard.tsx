@@ -1,7 +1,16 @@
 import React from 'react';
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
-const MemberCard = ({ color, memberName, memberId, imageSrc, score, lastTouchpoint }) => {
+type MemberCardProps = {
+  color: 'blue' | 'red' | 'yellow' | 'green'; // Specify the allowed colors
+  memberName: string;
+  memberId: string;
+  imageSrc: string;
+  score: string; // or string, depending on what score is
+  lastTouchpoint: string;
+};
+const MemberCard = ({ color, memberName, memberId, imageSrc, score, lastTouchpoint }: MemberCardProps) => {
   // Define the classes based on the color prop
   const classes = {
     blue: {
@@ -31,8 +40,13 @@ const MemberCard = ({ color, memberName, memberId, imageSrc, score, lastTouchpoi
         <CheckCircleIcon className={`h-12 w-12 text-white ${bgColor} rounded-full`} />
       </div>
       <figure className="overflow-hidden">
-        <img src={imageSrc} alt={memberName} />
-      </figure>
+      <Image 
+    src={imageSrc} 
+    alt={memberName} 
+    width={500}  // Replace with actual width
+    height={300} // Replace with actual height
+    objectFit="cover" // This ensures the image covers the area, you can adjust as needed
+  />      </figure>
       <div className={`card-body ${bgColor} text-white`}>
         <div className="relative">
           <h2 className="card-title">
