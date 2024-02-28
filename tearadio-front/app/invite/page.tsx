@@ -15,13 +15,14 @@ const Invite = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-8">
         <div className="self-start">
-  <Image 
+        <Link href='/'>
+        <Image 
     src="https://pbs.twimg.com/profile_images/610939586571825152/8JWXGIFM_400x400.jpg" 
     alt="Logo"
     className="object-cover rounded-full cursor-pointer" 
     width={80} // Increase width as needed
     height={80} // Increase height as needed
-  />
+  /></Link>
 </div>
 
         <div className="bg-white p-6 rounded-lg shadow-lg max-w-5xl w-full max-h-5xl">
