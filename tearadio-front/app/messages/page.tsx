@@ -10,16 +10,16 @@ const Messages = () => {
 
   // Sample announcements data
   const announcements = [
-    { id: 1, text: 'Welcome to All Over Europe Kindred! Where every day is an adventure into the unknown and the dress code is always &apos;surprise me&apos;.' },
-    { id: 2, text: 'Urgent meeting scheduled for 3rd March at 10 AM. Topic: Debating the best pizza topping. Spoiler: It&apos;s pineapple.' },
-    { id: 3, text: 'Friendly reminder: Submit your feedback by Friday or be forever haunted by the ghost of unfinished tasks.' },
-    { id: 4, text: 'New discussion topic: Sustainable Travel. First question: Can we teleport yet? If not, why not?' },
-    { id: 5, text: 'Exciting photo contest starting next week! Theme: Best impersonation of a vegetable. Prize: Eternal glory and a bag of carrots.' },
-    { id: 6, text: 'Did anyone lose a time machine? Found one parked outside. It&apos;s set to 1985. Also, it&apos;s a DeLorean!' },
-    { id: 7, text: 'Important: If you&apos;re reading this message, you&apos;re awesome. Keep being awesome. That is all.' },
-    { id: 8, text: 'Spoiler alert! Friday&apos;s lunch menu: Magic beans and fairy dust sandwiches. Side of unicorn tears for dipping.' },
-    { id: 9, text: 'Breaking News: Coffee has been declared the official drink of Mondays. All other beverages, please step aside.' },
-    { id: 10, text: 'Alert: The office plant is on vacation next week. Plant-sitter needed. Must be fluent in photosynthesis.' }
+    { id: 1, text: `Welcome to All Over Europe Kindred! Where every day is an adventure into the unknown and the dress code is always &apos;surprise me&apos;.` },
+    { id: 2, text: `Urgent meeting scheduled for 3rd March at 10 AM. Topic: Debating the best pizza topping. Spoiler: It&apos;s pineapple.` },
+    { id: 3, text: `Friendly reminder: Submit your feedback by Friday or be forever haunted by the ghost of unfinished tasks.` },
+    { id: 4, text: `New discussion topic: Sustainable Travel. First question: Can we teleport yet? If not, why not?` },
+    { id: 5, text: `Exciting photo contest starting next week! Theme: Best impersonation of a vegetable. Prize: Eternal glory and a bag of carrots.` },
+    { id: 6, text: `Did anyone lose a time machine? Found one parked outside. It&apos;s set to 1985. Also, it&apos;s a DeLorean!` },
+    { id: 7, text: `Important: If you&apos;re reading this message, you&apos;re awesome. Keep being awesome. That is all.` },
+    { id: 8, text: `Spoiler alert! Friday&apos;s lunch menu: Magic beans and fairy dust sandwiches. Side of unicorn tears for dipping.` },
+    { id: 9, text: `Breaking News: Coffee has been declared the official drink of Mondays. All other beverages, please step aside.` },
+    { id: 10, text: `Alert: The office plant is on vacation next week. Plant-sitter needed. Must be fluent in photosynthesis.` }
   ];
   
 
