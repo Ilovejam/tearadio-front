@@ -6,7 +6,7 @@ import IdCardMember from '../components/IdCardMember';
 import IdCardStaff from '../components/IdCardStaff';
 import TalentCard from '../components/TalentCard';
 
-const page = () => {
+const Personal = () => {
     
 
   const [cardsPerRow, setCardsPerRow] = useState(5);
@@ -177,4 +177,4 @@ const page = () => {
   );
 }
 
-export default page;
+export default Personal;

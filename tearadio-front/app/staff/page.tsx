@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import BottomNavBar from '../components/BottomNavBar';
 import IdCardStaff from '../components/IdCardStaff';
 import Image from 'next/image';
-const page = () => {
+const Staff = () => {
   return (
     <div>
       <Navbar />
@@ -22,4 +22,4 @@ const page = () => {
   );
 }
 
-export default page;
+export default Staff;
