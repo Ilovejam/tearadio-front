@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 const CreatedLabel = () => {
   return (
     <div className="flex overflow-x-auto gap-4">
@@ -8,7 +8,7 @@ const CreatedLabel = () => {
         <figure>
           {/* eslint-disable-next-line @next/next/no-img-element */}
 
-          <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+          <Image width={400} height={400} src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">Shoes!</h2>
           <p>If a dog chews shoes whose shoes?</p>
@@ -23,7 +23,7 @@ const CreatedLabel = () => {
         <figure>
           {/* eslint-disable-next-line @next/next/no-img-element */}
 
-          <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+          <Image width={400} height={400} src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">More Shoes!</h2>
           <p>Find your perfect pair of shoes.</p>

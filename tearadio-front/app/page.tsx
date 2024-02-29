@@ -38,144 +38,15 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      
       <Navbar />
-      <div className="mb-4">
-        {showSettings && (
-          <div className="mt-2 py-2 w-48 bg-white shadow-lg rounded-lg">
-            <button onClick={zoomIn} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Zoom In</button>
-            <button onClick={zoomOut} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left">Zoom Out</button>
-          </div>
-        )}
-      </div>
 
-
- 
-      <div style={gridStyle} className="grid gap-4">
-     <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-     <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-     <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-    <TalentCard
-        name="Mark Magellan"
-        username="Mark"
-        role="Financial Planner"
-        image="https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg" // Gerçek bir resim URL'si ile değiştirin
-    />
-
-    </div> 
-
-
-      </div> 
+      
+<IdCardStaff
+            membershipNumber="JW23311"
+            memberName="Freddie asd"
+            memberSinceDate="Jan 1, 2024"
+          />
 
 
       <BottomNavBar></BottomNavBar>

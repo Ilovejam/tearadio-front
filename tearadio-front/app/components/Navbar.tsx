@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
               <UserGroupIcon className="h-6 w-6 text-black cursor-pointer mx-2" />
 
             </Link>
-          <Link href='/qr-screen'>  
+          <Link href='/staff'>  
             <QrCodeIcon className="h-6 w-6 text-black cursor-pointer mx-2" />
           </Link>
             <Link href="/notifications">

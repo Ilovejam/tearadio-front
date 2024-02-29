@@ -18,9 +18,10 @@ const IdCardStaff: React.FC<MemberCardProps> = ({
       <div
         className="relative text-white p-6 rounded-lg shadow-lg overflow-hidden max-w-sm w-full"
         style={{
-          background: 'linear-gradient(180deg, rgba(17,24,39,1) 0%, rgba(29,78,216,1) 100%)',
-          minHeight: '400px', // Set a minimum height for the card
+          background: 'linear-gradient(180deg, rgba(46,204,113,1) 0%, rgba(26,188,156,1) 100%)',
+          minHeight: '400px',
         }}
+        
       >
         {/* Logo with transparent background and shadow */}
         <div className="absolute bottom-8 left-4 p-2" style={{ background: 'rgba(255, 255, 255, 0.2)', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.5)', borderRadius: '10px' }}>
@@ -36,10 +37,10 @@ const IdCardStaff: React.FC<MemberCardProps> = ({
 
 
         <div className="text-xl mb-2">THE PARK AT 14TH</div>
-        <div className="text-5xl font-semibold mb-2">FB12344</div>
-        <div className="text-sm mb-4">Membership Number</div>
-        <div className="text-3xl font-semibold mb-2">Freddie Brown</div>
-        <div className="text-md mb-4">Member since: Jan 1.2024</div>
+        <div className="text-5xl font-semibold mb-2">JW31231</div>
+        <div className="text-sm mb-4">Staff Number</div>
+        <div className="text-3xl font-semibold mb-2">Jamal Walker</div>
+        <div className="text-md mb-4">Member since: May 1.2023</div>
 
         {/* QR Code aligned with the logo at the bottom */}
         <div className="absolute bottom-0 right-0 p-4">

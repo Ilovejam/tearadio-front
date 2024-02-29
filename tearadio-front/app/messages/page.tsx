@@ -4,7 +4,7 @@ import React from 'react';
 import { ArrowLeftIcon, StarIcon } from '@heroicons/react/24/outline';
 import Navbar from '../components/Navbar';
 import BottomNavBar from '../components/BottomNavBar';
-
+import Image from 'next/image';
 const Messages = () => {
   const [showAnnouncements, setShowAnnouncements] = useState(false);
 
@@ -35,7 +35,7 @@ const Messages = () => {
         <div className="flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
 
-          <img src="https://images.unsplash.com/photo-1682685794761-c8e7b2347702?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kindred" className="h-10 w-10 rounded-full" />
+          <Image width={400} height={400} src="https://images.unsplash.com/photo-1682685794761-c8e7b2347702?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kindred" className="h-10 w-10 rounded-full" />
           <span className="text-lg font-semibold ml-3">Kindred Europe (Member...)</span>
         </div>
         <div>
@@ -66,7 +66,7 @@ const Messages = () => {
               <div className="flex items-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
 
-                <img src="https://pbs.twimg.com/profile_images/997845495790874625/XoSQza66_400x400.jpg" alt="Group" className="h-10 w-10 rounded-full" />
+                <Image width={400} height={400} src="https://pbs.twimg.com/profile_images/997845495790874625/XoSQza66_400x400.jpg" alt="Group" className="h-10 w-10 rounded-full" />
                 <span className="text-sm font-medium ml-3">Jamal Life</span>
               </div>
               <StarIcon className="h-5 w-5 text-gray-500" />
@@ -99,7 +99,7 @@ const Messages = () => {
         <div key={announcement.id} className="flex items-start mb-4">
           {/* eslint-disable-next-line @next/next/no-img-element */}
 
-          <img src="https://pbs.twimg.com/profile_images/997845495790874625/XoSQza66_400x400.jpg" alt="Sender" className="h-10 w-10 rounded-full mr-3" />
+          <Image width={400} height={400} src="https://pbs.twimg.com/profile_images/997845495790874625/XoSQza66_400x400.jpg" alt="Sender" className="h-10 w-10 rounded-full mr-3" />
           <div className="flex flex-col">
             <span className="text-sm font-medium">Jamal Walker</span>
             <div className="bg-gray-100 p-3 rounded">

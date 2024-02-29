@@ -1,9 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import BottomNavBar from '../components/BottomNavBar';
-import IdCardMember from '../components/IdCardMember';
 import IdCardStaff from '../components/IdCardStaff';
-
+import Image from 'next/image';
 const page = () => {
   return (
     <div>
@@ -12,12 +11,9 @@ const page = () => {
       <div className="flex flex-col sm:flex-row justify-center gap-5 mt-20">
         <div>
           {/* Title for Member Card */}
-          <div className="text-3xl text-center mb-2">Member Card</div>
-          <IdCardMember
-            membershipNumber="FB12344"
-            memberName="Freddie Brown"
-            memberSinceDate="Jan 1, 2024"
-          />
+          <Image src='https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/android/images/qrcode-single-mode.png' width={400} height={400} alt='qrscan'>
+
+          </Image>
         </div>
         
       </div>
