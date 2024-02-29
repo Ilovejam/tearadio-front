@@ -3,7 +3,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { BellIcon, CogIcon } from '@heroicons/react/24/outline'; // Bell ve Cog ikonlarını ekliyorum
+import { BellIcon, CogIcon, QrCodeIcon,  UserGroupIcon } from '@heroicons/react/24/outline'; // Bell ve Cog ikonlarını ekliyorum
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -30,10 +30,18 @@ const Navbar: React.FC = () => {
           </Link>
           {/* Sağ taraftaki ikonlar */}
           <div className="flex items-center">
-            <Link href="/messages">
+            <Link href='/personal'>
+              <UserGroupIcon className="h-6 w-6 text-black cursor-pointer mx-2" />
+
+            </Link>
+          <Link href='/qr-screen'>  
+            <QrCodeIcon className="h-6 w-6 text-black cursor-pointer mx-2" />
+          </Link>
+            <Link href="/notifications">
               <BellIcon className="h-6 w-6 text-black cursor-pointer mx-2" />
 
             </Link>
+
             <Link href="/settings">
               
                 <CogIcon className="h-6 w-6 text-black cursor-pointer mx-2" />

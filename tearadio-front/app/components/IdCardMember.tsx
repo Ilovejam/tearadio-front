@@ -8,7 +8,7 @@ type MemberCardProps = {
   memberSinceDate: string;
 };
 
-const IdCard: React.FC<MemberCardProps> = ({
+const IdCardMember: React.FC<MemberCardProps> = ({
   membershipNumber,
   memberName,
   memberSinceDate,
@@ -63,4 +63,4 @@ const IdCard: React.FC<MemberCardProps> = ({
   );
 };
 
-export default IdCard;
+export default IdCardMember;
