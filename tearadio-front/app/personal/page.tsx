@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import BottomNavBar from '../components/BottomNavBar';
 import IdCardMember from '../components/IdCardMember';
@@ -11,6 +11,24 @@ const Personal = () => {
 
   const [cardsPerRow, setCardsPerRow] = useState(5);
   const [showSettings, setShowSettings] = useState(false); // Ayarlar menüsünü gösterip gizlemek için
+useEffect(() => {
+    const handleResize = () => {
+      // Ekran genişliği 768px'den küçükse kart sayısını 1 yap
+      if (window.innerWidth < 768) {
+        setCardsPerRow(1);
+      } else {
+        // Ekran genişliği 768px ve üzeriyse varsayılan kart sayısını kullan
+        setCardsPerRow(5);
+      }
+    };
+
+    // Komponent yüklendiğinde ve pencere boyutu değiştiğinde çalıştır
+    handleResize(); // İlk yükleme için çalıştır
+    window.addEventListener('resize', handleResize);
+
+    // Komponentin temizlenme aşamasında event listener'ı kaldır
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const zoomIn = () => {
     setCardsPerRow(prev => Math.max(1, prev - 1)); // En az 1 kart olacak şekilde sınırlandır
