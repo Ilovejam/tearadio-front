@@ -48,6 +48,7 @@ export default function Home() {
         )}
       </div>
 
+
  
       <div style={gridStyle} className="grid gap-4">
      <TalentCard
@@ -172,6 +173,9 @@ export default function Home() {
     />
 
     </div> 
+
+
+      </div> 
 
 
       <BottomNavBar></BottomNavBar>

@@ -3,7 +3,7 @@
 import React from 'react';
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-
+import Image from 'next/image';
 const Invite = () => {
     
 
@@ -14,7 +14,19 @@ const Invite = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-8">
+        <div className="self-start">
+        <Link href='/'>
+        <Image 
+    src="https://pbs.twimg.com/profile_images/610939586571825152/8JWXGIFM_400x400.jpg" 
+    alt="Logo"
+    className="object-cover rounded-full cursor-pointer" 
+    width={80} // Increase width as needed
+    height={80} // Increase height as needed
+  /></Link>
+</div>
+
         <div className="bg-white p-6 rounded-lg shadow-lg max-w-5xl w-full max-h-5xl">
+        
         <div className="flex justify-between items-center mb-6">
          
           <span className="text-2xl font-bold">invite new member!</span>
