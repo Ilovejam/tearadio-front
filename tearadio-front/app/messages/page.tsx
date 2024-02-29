@@ -51,7 +51,7 @@ const Messages = () => {
             <h2 className='font-semibold text-lg mb-2'>Announcements</h2>
             <div className='bg-white p-4 rounded-lg shadow'>
               <div className='flex items-center justify-between'>
-                <span className='text-sm font-medium'>~Nikki✨ added the group '🎵 Music I...</span>
+                <span className='text-sm font-medium'>~Nikki✨ added the group 🎵 Music I...</span>
                 <StarIcon className='h-5 w-5 text-gray-500' />
               </div>
             </div>
