@@ -1,28 +1,25 @@
 import React from 'react';
 import Image from 'next/image';
-type StatusType = "In-Active" | "Active" | "VIP" | "All Members";
 
-interface  TalentCardProps {
+type StatusType = 'In-Active' | 'Active' | 'VIP' | 'All Members';
+
+type TalentCardProps = {
     name: string;
     username: string;
     role: string;
     image: string;
-    status: StatusType;
+    status: StatusType; // status alanını StatusType'a göre belirliyoruz
 };
-
-
 
 const TalentCard: React.FC<TalentCardProps> = ({ name, username, role, image, status }) => {
     return (
         <div className="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-
             <Image className="w-full rounded-t-lg" src={image} alt={`Profile of ${name}`} width={400} height={400} style={{ clipPath: 'polygon(0 0, 100% 0, 100% 90%, 0 100%)' }} />
             <div className="px-6 py-4">
                 <div className="flex items-center">
                     <div className="flex-shrink-0 mr-3">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-
                         <Image className="w-10 h-10 rounded-full border border-gray-200" width={400} height={400} src={image} alt={`Avatar of ${name}`} />
                     </div>
                     <div className="flex-1">
