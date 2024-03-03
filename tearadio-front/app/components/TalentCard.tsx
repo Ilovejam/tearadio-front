@@ -1,11 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
-type TalentCardProps = {
+type StatusType = "In-Active" | "Active" | "VIP" | "All Members";
+
+interface  TalentCardProps {
     name: string;
     username: string;
     role: string;
     image: string;
-    status: 'In-Active' | 'Active' | 'VIP' | 'All Members'; // Durumu temsil eden yeni prop
+    status: StatusType;
 };
 
 
