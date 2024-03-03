@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "postinstall": "npm install --legacy-peer-deps"
-  },  
+
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "postinstall": "npm install --legacy-peer-deps"
+},
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "daisyui": "^4.7.2",
