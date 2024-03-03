@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
+
 interface ConfirmAddNoteProps {
   isOpen: boolean;
   onClose: () => void;
@@ -10,7 +11,6 @@ interface ConfirmAddNoteProps {
 }
 
 const ConfirmAddNote: React.FC<ConfirmAddNoteProps> = ({ isOpen, onClose, onConfirm, onAddNote, showThankYou }) => {
-  if (!isOpen) return null;
   const [note, setNote] = useState('');
 
   if (!isOpen) return null;
