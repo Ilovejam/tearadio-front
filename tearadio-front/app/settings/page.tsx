@@ -53,32 +53,25 @@ const Settings = () => {
             <p className="font-semibold text-lg mb-2">{section.title}</p>
             <div className="space-y-2">
   {section.options.map((option) => (
-    option.name === 'Share the App' ? (
-      <Link href="/invite" key={option.name}>
-        <div
-          className="flex items-center justify-between p-3 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out cursor-pointer"
-        >
+    <div key={option.name} className="flex items-center justify-between p-3 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out cursor-pointer">
+      {option.name === 'Share the App' || option.name === 'User Guides' ? (
+        <Link href={option.name === 'Share the App' ? '/invite' : '/userlogs'}>
           <div className="flex items-center">
             <span className="text-2xl mr-2">{option.icon}</span>
             <span>{option.name}</span>
           </div>
-          <span className="text-2xl">›</span>
-        </div>
-      </Link>
-    ) : (
-      <div
-        key={option.name}
-        className="flex items-center justify-between p-3 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out cursor-pointer"
-      >
+        </Link>
+      ) : (
         <div className="flex items-center">
           <span className="text-2xl mr-2">{option.icon}</span>
           <span>{option.name}</span>
         </div>
-        <span className="text-2xl">›</span>
-      </div>
-    )
+      )}
+      <span className="text-2xl">›</span>
+    </div>
   ))}
 </div>
+
 
           </div>
         ))}

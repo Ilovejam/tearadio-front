@@ -49,7 +49,6 @@ export default function Home() {
           />
 
 
-      <BottomNavBar></BottomNavBar>
     </main>
   );
 }

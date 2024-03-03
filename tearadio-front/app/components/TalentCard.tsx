@@ -5,7 +5,9 @@ type TalentCardProps = {
     username: string;
     role: string;
     image: string;
+    status: 'In-Active' | 'Active' | 'VIP' | 'All Members'; // Durumu temsil eden yeni prop
 };
+
 
 const TalentCard: React.FC<TalentCardProps> = ({ name, username, role, image }) => {
     return (

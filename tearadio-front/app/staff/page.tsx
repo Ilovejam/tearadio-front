@@ -1,25 +1,52 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import BottomNavBar from '../components/BottomNavBar';
-import IdCardStaff from '../components/IdCardStaff';
-import Image from 'next/image';
-const Staff = () => {
-  return (
-    <div>
-      <Navbar />
-      {/* Flex container to center and display cards side by side on larger screens, and stack them on smaller screens */}
-      <div className="flex flex-col sm:flex-row justify-center gap-5 mt-20">
-        <div>
-          {/* Title for Member Card */}
-          <Image src='https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/android/images/qrcode-single-mode.png' width={400} height={400} alt='qrscan'>
+"use client";
 
-          </Image>
-        </div>
-        
-      </div>
-      <BottomNavBar />
+"use client";
+import React, { useEffect, useRef } from 'react';
+import { Html5QrcodeScanner, Html5QrcodeScanType } from 'html5-qrcode';
+import Navbar from '../components/Navbar';
+const Staff = () => {
+  const qrScannerRef = useRef(null);
+
+  useEffect(() => {
+    const onScanSuccess = (decodedText, decodedResult) => {
+      // URL'i doğrudan aç
+      window.location.href = decodedText;
+    };
+
+    const onScanFailure = (error) => {
+      console.error(`QR Kodu Okuma Hatası: ${error}`);
+    };
+
+    const config = {
+      fps: 10,
+      qrbox: { width: 400, height: 400 },
+      experimentalFeatures: {
+        useBarCodeDetectorIfSupported: true
+      },
+      rememberLastUsedCamera: true,
+      supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_CAMERA],
+      aspectRatio: 1.7777778
+    };
+
+    const html5QrcodeScanner = new Html5QrcodeScanner(
+      "qr-reader",
+      config,
+      false // verbose flag
+    );
+
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+
+    return () => {
+      html5QrcodeScanner.clear();
+    };
+  }, []);
+
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <Navbar></Navbar>
+      <div id="qr-reader" ref={qrScannerRef} className="w-full"></div>
     </div>
   );
-}
+};
 
 export default Staff;

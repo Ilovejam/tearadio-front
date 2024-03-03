@@ -1,4 +1,7 @@
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
+
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -6,13 +9,17 @@ type MemberCardProps = {
   membershipNumber: string;
   memberName: string;
   memberSinceDate: string;
+  qrCodeUrl: string;
 };
 
 const IdCardMember: React.FC<MemberCardProps> = ({
   membershipNumber,
   memberName,
   memberSinceDate,
+  qrCodeUrl
 }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
     <div className="flex flex-col justify-center items-center">
       <div
@@ -36,20 +43,31 @@ const IdCardMember: React.FC<MemberCardProps> = ({
 
 
         <div className="text-xl mb-2">THE PARK AT 14TH</div>
-        <div className="text-5xl font-semibold mb-2">FB12344</div>
+        <div className="text-5xl font-semibold mb-2">{membershipNumber}</div>
         <div className="text-sm mb-4">Membership Number</div>
-        <div className="text-3xl font-semibold mb-2">Freddie Brown</div>
-        <div className="text-md mb-4">Member since: Jan 1.2024</div>
+        <div className="text-3xl font-semibold mb-2">{memberName}</div>
+        <div className="text-md mb-4">Member since: {memberSinceDate}</div>
 
-        {/* QR Code aligned with the logo at the bottom */}
-        <div className="absolute bottom-0 right-0 p-4">
+        <div className="absolute bottom-0 right-0 p-4" onClick={() => setModalOpen(true)} style={{ cursor: 'pointer' }}>
           <Image
-            src="https://media.istockphoto.com/id/828088276/vector/qr-code-illustration.jpg?s=612x612&w=0&k=20&c=FnA7agr57XpFi081ZT5sEmxhLytMBlK4vzdQxt8A70M="
+            src={qrCodeUrl}
             alt="QR Code"
-            width= {80}
-            height= {80}
+            width={80}
+            height={80}
           />
         </div>
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center" onClick={() => setModalOpen(false)}>
+            <div className="modal-body p-5 bg-white">
+              <Image
+                src={qrCodeUrl}
+                alt="QR Code"
+                width={300}
+                height={300}
+              />
+            </div>
+          </div>
+        )}
       </div>
       <div className="flex justify-center items-center mt-4 border-2 border-blue-500 rounded-full w-12 h-12"> {/* Circular div with blue border */}
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="blue" className="w-6 h-6"> {/* SVG with blue stroke */}
