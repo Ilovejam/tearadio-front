@@ -9,13 +9,13 @@ const Staff = () => {
   const qrScannerRef = useRef(null);
 
   useEffect(() => {
-    const onScanSuccess = (decodedText, decodedResult) => {
+    const onScanSuccess = (decodedText :any, decodedResult :any) => {
       // URL'i doğrudan aç
       window.location.href = decodedText;
 
     };
 
-    const onScanFailure = (error) => {
+    const onScanFailure = (error : any) => {
       console.error(`QR Kodu Okuma Hatası: ${error}`);
     };
 
