@@ -45,10 +45,7 @@ const Staff = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-<<<<<<< HEAD
       <Navbar></Navbar>
-=======
->>>>>>> 10c73c395140f11fdf332c305d47ef23dff7074b
       <div id="qr-reader" ref={qrScannerRef} className="w-full"></div>
     </div>
   );
