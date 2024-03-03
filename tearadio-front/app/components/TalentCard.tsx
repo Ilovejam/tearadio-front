@@ -3,13 +3,14 @@ import Image from 'next/image';
 
 type StatusType = 'In-Active' | 'Active' | 'VIP' | 'All Members';
 
-type TalentCardProps = {
+export type TalentCardProps = {
     name: string;
     username: string;
     role: string;
     image: string;
     status: StatusType; // status alanını StatusType'a göre belirliyoruz
 };
+
 
 const TalentCard: React.FC<TalentCardProps> = ({ name, username, role, image, status }) => {
     return (

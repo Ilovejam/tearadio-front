@@ -24,7 +24,7 @@ const Personal = () => {
     { name: "Samantha Brown", username: "samantha", role: "UI/UX Designer", image: "https://img.freepik.com/free-photo/smiling-girl-eyeglasses_1157-16454.jpg", status: "In-Active" }
   ];
 
-  const filteredCards = cardsData.filter(card => filterStatus === 'All Members' || card.status === filterStatus);
+  const filteredCards: TalentCardProps[] = cardsData.filter(card => filterStatus === 'All Members' || card.status === filterStatus);
 
   useEffect(() => {
     const handleResize = () => {
