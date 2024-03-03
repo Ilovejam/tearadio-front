@@ -8,7 +8,7 @@ const page = () => {
             membershipNumber="AW23122"
             memberName="Angelica Wesley"
             memberSinceDate="Mar 1, 2024"
-            qrCodeUrl="https://i.ibb.co/Ch7rp0f/freddie.png" // Özel QR kodu URL'nizi buraya ekleyin
+            qrCodeUrl="https://iili.io/JMZgzEx.png" // Özel QR kodu URL'nizi buraya ekleyin
         />
 
     </div>
