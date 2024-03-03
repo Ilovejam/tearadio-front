@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const BottomNavBar = () => {
   return (
-    <div className="fixed inset-x-0 bottom-0 bg-white border-t-2 border-gray-200">
+    <div className="fixed inset-x-0  bottom-0 bg-white border-t-2 border-gray-200">
       <div className="flex justify-between items-center max-w-md mx-auto p-4">
         <Link href='/personal'>
           <button className="flex flex-col items-center">

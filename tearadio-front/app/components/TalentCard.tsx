@@ -5,9 +5,11 @@ type TalentCardProps = {
     username: string;
     role: string;
     image: string;
+    status: 'In-Active' | 'Active' | 'VIP' | 'All Members'; // Durumu temsil eden yeni prop
 };
 
-const TalentCard: React.FC<TalentCardProps> = ({ name, username, role, image }) => {
+
+const TalentCard: React.FC<TalentCardProps> = ({ name, username, role, image, status }) => {
     return (
         <div className="max-w-xs rounded-lg overflow-hidden shadow-lg bg-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}

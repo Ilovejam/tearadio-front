@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="shadow-lg fixed w-full top-0 left-0 z-10 bg-white">
+    <nav className=" fixed w-full top-0 left-0 z-0 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-3">
           {/* Sol taraftaki QR ikonu */}
