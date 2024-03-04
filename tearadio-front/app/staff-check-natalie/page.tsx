@@ -1,6 +1,5 @@
 import React from 'react';
 import MemberCard from '../components/MemberCard'; // Doğru yolu kullanın
-
 const Page = () => {
   return (
     // Ekranın tam ortasına yerleştirmek için flex kullanın

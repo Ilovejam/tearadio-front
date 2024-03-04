@@ -1,9 +1,11 @@
 import React from 'react'
 import IdCardMember from '../components/IdCardMember'
-import Navbar from '../components/Navbar'
+import NavbarMember from '../components/NavbarMember'
+
 const page = () => {
   return (
     <div className='mt-10'>
+      <NavbarMember></NavbarMember>
       <IdCardMember
             membershipNumber="NW89213"
             memberName="Natalie Walker"

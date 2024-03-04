@@ -38,12 +38,7 @@ const ConfirmAddNote: React.FC<ConfirmAddNoteProps> = ({ isOpen, onClose, onConf
           >
             <CheckCircleIcon className="h-5 w-5 inline" /> Confirm
           </button>
-          <button
-            className="px-4 py-2 bg-blue-500 text-white rounded"
-            onClick={onAddNote}
-          >
-            Add Note
-          </button>
+        
         </div>
         <div>
           <textarea
@@ -53,24 +48,7 @@ const ConfirmAddNote: React.FC<ConfirmAddNoteProps> = ({ isOpen, onClose, onConf
             onChange={(e) => setNote(e.target.value)}
           ></textarea>
         </div>
-        <div className="mt-2 flex justify-end">
-          <button
-            className="px-4 py-2 bg-gray-300 text-black rounded mr-2"
-            onClick={onClose}
-          >
-            Close
-          </button>
-          <button
-            className="px-4 py-2 bg-blue-500 text-white rounded"
-            onClick={() => {
-              alert(`Note Added: ${note}`);
-              setNote('');
-              onClose();
-            }}
-          >
-            Submit Note
-          </button>
-        </div>
+        
       </div>
     </div>
   );

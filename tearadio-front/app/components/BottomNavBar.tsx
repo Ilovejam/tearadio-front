@@ -24,10 +24,12 @@ const BottomNavBar = () => {
             <span className="text-xs">Messages</span>
           </button>
         </Link>
+       <Link href='/requestaccess'>
         <button className="flex flex-col items-center">
-          <UserIcon className="h-6 w-6"/>
-          <span className="text-xs">Campaign</span>
-        </button>
+            <UserIcon className="h-6 w-6"/>
+            <span className="text-xs">Campaign</span>
+          </button>
+       </Link>
       </div>
     </div>
   )

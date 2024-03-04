@@ -76,7 +76,7 @@ const IdCardMember: React.FC<MemberCardProps> = ({
 </div>
 
 
-      <p>Hold the reader</p>
+      <p>Tap to Scan</p>
     </div>
   );
 };
