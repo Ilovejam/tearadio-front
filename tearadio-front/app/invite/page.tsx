@@ -51,7 +51,7 @@ const Invite = () => {
         </Link>
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-5xl w-full max-h-5xl">
+      <div className="bg-white p-6 rounded-lg shadow-lg max-w-5xl w-full max-h-5xl mx-4">
         <div className="flex justify-between items-center mb-6">
           <span className="text-2xl font-bold">invite new member!</span>
           <PaperAirplaneIcon className="h-6 w-6 text-gray-800 rotate-90 transform" />
