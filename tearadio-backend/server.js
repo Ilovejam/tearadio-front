@@ -5,7 +5,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Vercel tarafından belirlenen port veya 3000
 
 const vonage = new Vonage({
   apiKey: process.env.VONAGE_API_KEY,
@@ -32,7 +32,6 @@ function sendSms(from, to, text) {
   });
 }
 
-
 app.post('/send-sms', async (req, res) => {
   const { phone, name, notes } = req.body;
   const from = "Vonage APIs";
@@ -48,6 +47,9 @@ app.post('/send-sms', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// Vercel için özel olarak ayarlanmış bir dinleyici gerekli değildir, bu yüzden bu kodu kaldırabilirsiniz.
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
+
+module.exports = app; // Vercel'in uygulamayı tanıyabilmesi için bu satırı ekleyin
