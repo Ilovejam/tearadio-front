@@ -15,7 +15,7 @@ const Invite = () => {
     e.preventDefault(); // Formun varsayılan gönderim işlemini engeller.
   
     try {
-      const response = await fetch('http://localhost:3000/send-sms', {
+      const response = await fetch('https://tearadio-front.vercel.app/send-sms', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
