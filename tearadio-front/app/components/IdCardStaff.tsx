@@ -40,10 +40,10 @@ const IdCardStaff: React.FC<MemberCardProps> = ({
 
 
         <div className="text-xl mb-2">THE PARK AT 14TH</div>
-        <div className="text-5xl font-semibold mb-2">RT31231</div>
+        <div className="text-5xl font-semibold mb-2">{membershipNumber}</div>
         <div className="text-sm mb-4">Staff Number</div>
-        <div className="text-3xl font-semibold mb-2">Renee Stephens</div>
-        <div className="text-md mb-4">Member since: May 1.2023</div>
+        <div className="text-3xl font-semibold mb-2">{memberName}</div>
+        <div className="text-sm mb-4">Member since: {memberSinceDate}</div>
 
         {/* QR Code aligned with the logo at the bottom */}
         <div className="absolute bottom-0 right-0 p-4" onClick={() => setModalOpen(true)} style={{ cursor: 'pointer' }}>

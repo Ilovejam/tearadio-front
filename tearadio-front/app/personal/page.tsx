@@ -12,16 +12,18 @@ const Personal = () => {
   const [filterStatus, setFilterStatus] = useState<'In-Active' | 'Active' | 'VIP' | 'All Members'>('All Members');
 
   const cardsData: TalentCardProps[] = [
-    { name: "John Doe", username: "john", role: "Developer", image: "https://img.freepik.com/free-photo/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair_285396-896.jpg", status: "Active" },
-    { name: "Jane Smith", username: "jane", role: "Designer", image: "https://img.freepik.com/free-photo/medium-shot-happy-woman-holding-shopping-bags_23-2148671804.jpg", status: "In-Active" },
-    { name: "Mike Johnson", username: "mike", role: "Manager", image: "https://img.freepik.com/free-photo/confident-young-businessman-glasses-suit_1098-20832.jpg", status: "VIP" },
-    { name: "Emily Davis", username: "emily", role: "HR Specialist", image: "https://img.freepik.com/free-photo/confident-female-professional-eyeglasses_1262-20950.jpg", status: "Active" },
-    { name: "Chris Brown", username: "chris", role: "Marketing Lead", image: "https://img.freepik.com/free-photo/joyful-curly-businesswoman-pointing-upper-left-corner-smiling_176420-20679.jpg", status: "In-Active" },
-    { name: "Lisa White", username: "lisa", role: "Product Manager", image: "https://img.freepik.com/free-photo/smiling-woman-pointing-fingers-away_171337-14362.jpg", status: "VIP" },
-    { name: "James Green", username: "james", role: "Software Engineer", image: "https://img.freepik.com/free-photo/medium-shot-smiley-man-with-glasses_23-2148989680.jpg", status: "All Members" },
-    { name: "Sarah Miller", username: "sarah", role: "Data Analyst", image: "https://img.freepik.com/free-photo/positive-woman-with-broad-smile-points-index-finger-upper-right-corner_273609-16017.jpg", status: "Active" },
-    { name: "Matthew Wilson", username: "matthew", role: "CTO", image: "https://img.freepik.com/free-photo/young-executive-smiling_1098-20869.jpg", status: "VIP" },
-    { name: "Samantha Brown", username: "samantha", role: "UI/UX Designer", image: "https://img.freepik.com/free-photo/smiling-girl-eyeglasses_1157-16454.jpg", status: "In-Active" }
+    { name: "Erik Rodin", username: "erik", role: "Developer", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/651fcd004c72e1c16c9a0321_2UQ0Vej_y1-WEEAdJSnTMO4yzi3yM5pwjsTw-Djm2bc.jpeg", status: "Active" },
+    { name: "Ali Draycott", username: "a.draycot", role: "Designer", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/651fcce3cc1b5f34c1eae938_92T2gc67u8TURbjUIHYWMa9AnskTDJzdKYJniAoztNA.jpeg", status: "In-Active" },
+    { name: "Ana Salles", username: "ana", role: "Manager", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/652ca06821a48bfbd9c5a2cc_ana-salles_profile-picture_attaGwfpHAcvgg3Um.webp", status: "VIP" },
+    { name: "Jonas Altman", username: "jonas", role: "HR Specialist", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/652ca082c64b205154864ed8_jonas-altman-2_profile-picture_attbObm1d1UvguAQA.webp", status: "Active" },
+    { name: "Gabriela Nespoli", username: "chris", role: "Marketing Lead", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/652ca052070e0e83666a06d5_gabriela-nespoli_profile-picture_attGCYlBJgi84MTbG.webp", status: "In-Active" },
+    { name: "Mark Magellan", username: "mark", role: "Product Manager", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/652ca043071454dd38f1409b_mark-magellan_profile-picture_att2TQR7rDnlkIJ7T.webp", status: "VIP" },
+    { name: "Dan Dimmock", username: "dan", role: "Software Engineer", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/651ee6dd88ac1508d2fb08c1_dan-dimmock_profile-picture_6be70d47-1ae2-4ad1-b9da-53189952ea2c.webp", status: "All Members" },
+    { name: "Njoki Gitahi", username: "njoki", role: "Data Analyst", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/651fcd3c21ce06029fc106d7_X7jnXeW9rBmrrYIYggW5lXYhAdIhUY-7O4pa6WqKMfQ.png", status: "Active" },
+    { name: "Rula El Kaliouby", username: "Rula", role: "CTO", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/652ca05bf8c55b8848641d23_rula-el-kaliouby_profile-picture_attWuZAnqjVv1x9D5.webp", status: "VIP" },
+    { name: "Lindsey Mosby", username: "lindsey", role: "UI/UX Designer", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/652ca093c96bc509bc8e4683_lindsey-mosby_profile-picture_7aa2e825-fadc-4823-b7c5-434d32099011.webp", status: "In-Active" },
+    { name: "Lizzie Azzolino", username: "lizzie", role: "CTO", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/651ee6e91fbb9c5686e8e064_lizzie-azzolino_profile-picture_214119de-e7f6-4a10-a3c1-00df63ebc93f.webp", status: "In-Active" },
+    { name: "Özlem Tuskan", username: "ozlem", role: "UI/UX Designer", image: "https://assets-global.website-files.com/624c15e792d80d449d447b65/651fcd410703f3d23903cf95_K_TZmFAdkz-a2O0LR9QQxTAXpTvGUNr26AzVf9Gv__w.jpeg", status: "In-Active" }
   ];
 
   const filteredCards: TalentCardProps[] = cardsData.filter(card => filterStatus === 'All Members' || card.status === filterStatus);
@@ -64,7 +66,7 @@ const Personal = () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="navbar bg-base-100 shadow-lg fixed top-[60px] w-full z-10">
+      <div className="navbar bg-white shadow-lg fixed top-[60px] w-full z-10">
         <Navbar />
         <div className="navbar-start">
           <div className="dropdown">
@@ -92,11 +94,11 @@ const Personal = () => {
         ))}
       </div>
       {/* Üstteki butonlar için div, ekranın altında ve BottomNavBar üstünde sabitlenmiş */}
-      <div className="flex fixed justify-center items-center gap-2 py-2 bg-base-100 bottom-[70px] left-0 right-0">
-        <button onClick={() => changeText('In-Active')} className="px-4 py-2 bg-base-300 text-black rounded">In-Active</button>
-        <button onClick={() => changeText('Active')} className="px-4 py-2 bg-base-300 text-black rounded">Active</button>
-        <button onClick={() => changeText('VIP')} className="px-4 py-2 bg-base-300 text-black rounded">VIP</button>
-        <button onClick={() => changeText('All Members')} className="px-4 py-2 bg-base-300 text-black rounded">All Members</button>
+      <div className="flex fixed justify-center items-center gap-2 py-2 bg-white bottom-[70px] left-0 right-0">
+        <button onClick={() => changeText('In-Active')} className="px-4 py-2 bg-gray-300 text-black rounded">In-Active</button>
+        <button onClick={() => changeText('Active')} className="px-4 py-2 bg-gray-300 text-black rounded">Active</button>
+        <button onClick={() => changeText('VIP')} className="px-4 py-2 bg-gray-300 text-black rounded">VIP</button>
+        <button onClick={() => changeText('All Members')} className="px-4 py-2 bg-gray-300 text-black rounded">All Members</button>
       </div>
       <BottomNavBar />
     </main>

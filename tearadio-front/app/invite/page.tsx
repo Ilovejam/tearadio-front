@@ -1,15 +1,20 @@
 "use client";
 
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
+import React from 'react';
 import { PaperAirplaneIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Invite = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
   const [notes, setNotes] = useState('');
+  
+  const router = useRouter()
+
 
   const handleInvite = async (e:any) => {
     e.preventDefault(); // Formun varsayılan gönderim işlemini engeller.
@@ -30,7 +35,8 @@ const Invite = () => {
       if (!response.ok) throw new Error('SMS gönderimi başarısız.');
   
       console.log('Gönderildi');
-      // Başarılı gönderim sonrası işlemler
+      router.push('/thankyou');
+
     } catch (error) {
       console.error('Hata:', error);
     }
@@ -57,27 +63,28 @@ const Invite = () => {
           <PaperAirplaneIcon className="h-6 w-6 text-gray-800 rotate-90 transform" />
         </div>
         
-        <form className="space-y-4" onSubmit={handleInvite}>
+        <form className="space-y-4 bg-white" onSubmit={handleInvite}>
           <div>
             <label htmlFor="phone-number" className="block text-sm font-medium text-gray-700">Phone Number</label>
-            <input type="text" id="phone-number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="(202) - 123-1234" />
+            <input type="text" id="phone-number" onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-white" placeholder="(202) - 123-1234" />
           </div>
 
         
 
           <div>
             <label htmlFor="full-name" className="block text-sm font-medium text-gray-700">Full Name</label>
-            <input type="text" id="full-name" onChange={(e) => setFullName(e.target.value)} value={fullName} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="First, Last" />
+            <input type="text" id="full-name" onChange={(e) => setFullName(e.target.value)} value={fullName} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-white" placeholder="First, Last" />
           </div>
 
           <div>
             <label htmlFor="notes" className="block text-sm font-medium text-gray-700">Notes</label>
-            <textarea id="notes" rows={3} onChange={(e) => setNotes(e.target.value)} value={notes} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" placeholder="Share any important feedback."></textarea>
+            <textarea id="notes" rows={3} onChange={(e) => setNotes(e.target.value)} value={notes} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 bg-white" placeholder="Share any important feedback."></textarea>
           </div>
 
           <div>
             <button 
               type="submit"
+              onClick={() => router.push('/thankyou')}
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-black hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Invite!

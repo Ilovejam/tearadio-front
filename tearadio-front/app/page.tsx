@@ -43,8 +43,8 @@ export default function Home() {
 
       
 <IdCardStaff
-            membershipNumber="JW23311"
-            memberName="Freddie asd"
+            membershipNumber="RS11011"
+            memberName="Renee Stephens"
             memberSinceDate="Jan 1, 2024"
           />
 
