@@ -16,7 +16,7 @@ const page = () => {
           memberName="Karim Shehata"
           memberSinceDate="Jan 1, 2024"
         />
-    <BubbleChat chatflowid="df8d6be2-ec68-45a4-a7e4-9d833a492c79" apiHost="https://business-chat.onrender.com" />
+    <BubbleChat chatflowid="1e5db55c-3ff3-429c-9477-cfb74a89746d" apiHost="https://business-chat.onrender.com" />
 
   </div>
   )
