@@ -12,6 +12,7 @@ const Page = () => {
         imageSrc="https://hairstyles.thehairstyler.com/hairstyle_views/front_view_images/4072/original/Angelica-Bridges.jpg" // Resim URL'si
         score="90" // Skor
         lastTouchpoint="2024-01-01" // Son temas noktası
+        freedrink='2/4'
       />
         
     </div>

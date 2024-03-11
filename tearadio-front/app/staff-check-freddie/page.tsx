@@ -11,7 +11,8 @@ const Page = () => {
         memberId="FB12345" // Kullanıcı ID'si
         imageSrc="https://iili.io/JMy62Tv.png" // Resim URL'si
         score="95" // Skor
-        lastTouchpoint="" // Son temas noktası
+        lastTouchpoint="" 
+        freedrink='0/4'
       />
         
     </div>

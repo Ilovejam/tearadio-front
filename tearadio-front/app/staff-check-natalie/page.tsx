@@ -11,6 +11,8 @@ const Page = () => {
         imageSrc="https://m.media-amazon.com/images/M/MV5BODYxNzE4OTk5Nl5BMl5BanBnXkFtZTcwODYyMDYzMw@@._V1_.jpg" // Resim URL'si
         score="70" // Skor
         lastTouchpoint="2024-01-01" // Son temas noktası
+        freedrink='3/4'
+
       />
         
     </div>

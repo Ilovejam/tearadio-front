@@ -12,6 +12,8 @@ const Page = () => {
         imageSrc="https://iili.io/JMy64MN.png" // Resim URL'si
         score="88" // Skor
         lastTouchpoint="2024-01-01" // Son temas noktası
+        freedrink='4/4'
+
       />
         
     </div>

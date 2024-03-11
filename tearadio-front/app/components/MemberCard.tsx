@@ -13,6 +13,7 @@ interface MemberCardProps {
   imageSrc: string;
   score: string;
   lastTouchpoint: string;
+  freedrink: string;
 }
 
 
@@ -20,6 +21,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
   color,
   memberName,
   memberId,
+  freedrink,
   imageSrc,
   score,
   lastTouchpoint,
@@ -72,16 +74,22 @@ const handleAddNote = (note: any) => {
         </div>
         <figure className=" overflow-hidden">
   <Image src={imageSrc} alt={memberName} width={500} height={300} />
+  
   <div className="absolute right-0 bottom-28 m-4 bg-gray-400 rounded-full flex items-center justify-center" style={{ width: '80px', height: '80px' }}>
     <p className="text-white text-4xl font-bold text-stroke " style={{ WebkitTextStroke: '2px black' }}>{score}</p>
+    
   </div>
 </figure>
-        <div className={`p-5 text-white`}>
-          <h2 className="text-2xl font-bold" >{memberName}</h2>
-          <p>ID: {memberId}</p>
-          <p>Score: {score}</p>
-          <p>Last Touchpoint: {lastTouchpoint}</p>
-        </div>
+<div className="flex justify-between items-center p-5 text-white">
+  <div>
+    <h2 className="text-2xl font-bold" >{memberName}</h2>
+    <p>ID: {memberId}</p>
+    <p>Score: {score}</p>
+    <p>Last Touchpoint: {lastTouchpoint}</p>
+  </div>
+  <h1 className='text-4xl'>{freedrink}</h1>
+</div>
+
       </div>
       <div onClick={handleOpenModal}  className="grid grid-cols-2 gap-4 mt-4 justify-center">
       <div className="bg-white p-2 shadow-md flex items-center justify-start w-36 h-12 rounded-lg">

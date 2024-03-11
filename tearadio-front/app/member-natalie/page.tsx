@@ -4,13 +4,15 @@ import NavbarMember from '../components/NavbarMember'
 
 const page = () => {
   return (
-    <div className='mt-10'>
+    <div className='mt-20'>
       <NavbarMember></NavbarMember>
       <IdCardMember
             membershipNumber="NW89213"
             memberName="Natalie Walker"
             memberSinceDate="Jan 1, 2024"
-            qrCodeUrl="https://iili.io/JMZgdrl.png" // Özel QR kodu URL'nizi buraya ekleyin
+            qrCodeUrl="https://iili.io/JMZgdrl.png" 
+            freedrink='Free Drink 3/4'
+
         />
 
     </div>
