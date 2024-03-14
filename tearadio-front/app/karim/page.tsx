@@ -13,7 +13,7 @@ const page = () => {
     
     <IdCardStaff
           membershipNumber="KS12011"
-          memberName="Karim Shehata"
+          memberName="Kariem Shehata"
           memberSinceDate="Jan 1, 2024"
         />
     <BubbleChat chatflowid="1e5db55c-3ff3-429c-9477-cfb74a89746d" apiHost="https://business-chat.onrender.com" />
