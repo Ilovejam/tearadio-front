@@ -19,32 +19,35 @@ const Notifications = () => {
           <>
             <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               <Image
-                src="https://i.ibb.co/hBW4YVM/Notification.png"
+                src="/Notification1.png"
                 alt="First Notification"
                 width={500}
                 height={300}
                 layout="responsive"
                 objectFit="contain"
+                quality={90}
               />
             </div>
             <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               <Image
-                src="https://i.ibb.co/x26TjS5/Notification-1.png"
+                src="/Notification2.png"
                 alt="Second Notification"
                 width={500}
                 height={300}
                 layout="responsive"
                 objectFit="contain"
+                quality={90}
               />
             </div>
             <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
               <Image
-                src="https://i.ibb.co/zQsnfyL/Notification-2.png"
+                src="/Notification3.png"
                 alt="Third Notification"
                 width={500}
                 height={300}
                 layout="responsive"
                 objectFit="contain"
+                quality={90}
               />
             </div>
           </>
