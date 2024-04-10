@@ -2,15 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Setting up custom properties */
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-rgb: 255, 255, 255; /* white */
-}
-
 body {
-    color: rgb(var(--foreground-rgb));
-    background-color: rgb(var(--background-rgb)); /* Set background color to white */
+    color: #000; /* Text color set to black */
+    background-color: #fff; /* Background color set to white */
 }
 
 /* Custom Utility Classes */

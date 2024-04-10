@@ -1,11 +1,10 @@
-const express = require('express');
 const bodyParser = require('body-parser');
 const { Vonage } = require('@vonage/server-sdk');
 const cors = require('cors');
 require('dotenv').config();
-
+const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000; // Vercel tarafından belirlenen port veya 3000
+const port = process.env.PORT || 3000;  // Eğer PORT çevre değişkeni tanımlıysa onu kullan, değilse 3000 portunu kullan
 
 const vonage = new Vonage({
   apiKey: process.env.VONAGE_API_KEY,
@@ -14,6 +13,7 @@ const vonage = new Vonage({
 
 app.use(cors());
 app.use(bodyParser.json());
+let posts = []; // Bu array postlarımızı saklayacak.
 
 // SMS gönderme işlemi için Promise tabanlı bir fonksiyon
 function sendSms(from, to, text) {
@@ -47,9 +47,31 @@ app.post('/send-sms', async (req, res) => {
   }
 });
 
+
+// Postları getirme endpoint'i
+app.get('/posts', (req, res) => {
+  res.status(200).json(posts);
+});
+
+// Yeni post ekleme endpoint'i
+app.post('/posts', (req, res) => {
+  const post = req.body;
+  posts.push(post);
+  res.status(201).send(post);
+});
+
+// Post silme endpoint'i
+app.delete('/posts/:id', (req, res) => {
+  const { id } = req.params;
+  posts = posts.filter(post => post.id !== id);
+  res.status(200).send('Post deleted');
+});
+
+
 // Vercel için özel olarak ayarlanmış bir dinleyici gerekli değildir, bu yüzden bu kodu kaldırabilirsiniz.
-// app.listen(port, () => {
-//   console.log(`Server running on port ${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
 
 module.exports = app; // Vercel'in uygulamayı tanıyabilmesi için bu satırı ekleyin

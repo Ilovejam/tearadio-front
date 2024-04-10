@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-        "build": "next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
-  },  
+  },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@vonage/server-sdk": "^3.13.1",
+    "axios": "^1.6.8",
     "body-parser": "^1.20.2",
     "daisyui": "^4.7.2",
     "express": "^4.18.3",
