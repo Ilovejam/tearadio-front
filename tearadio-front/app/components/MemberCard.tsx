@@ -107,7 +107,7 @@ const handleAddNote = (note: any) => {
       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
     </svg>
   </div>
-  <span className="text-sm text-gray-700">Exit</span>
+  <span className="text-sm text-gray-700">Module 1</span>
 </div>
 <div className="bg-white p-2 shadow-md flex items-center justify-start w-36 h-12 rounded-lg">
   <div className="bg-blue-500 rounded-md p-2 mr-2">
@@ -116,7 +116,7 @@ const handleAddNote = (note: any) => {
 </svg>
 
   </div>
-  <span className="text-sm text-gray-700">Bar</span>
+  <span className="text-sm text-gray-700">Module 2</span>
 </div>
 
 <div className="bg-white p-2 shadow-md flex items-center justify-start w-36 h-12 rounded-lg">
@@ -126,7 +126,7 @@ const handleAddNote = (note: any) => {
 </svg>
 
   </div>
-  <span className="text-sm text-gray-700">Table</span>
+  <span className="text-sm text-gray-700">Module 3</span>
 </div>
  
 </div>

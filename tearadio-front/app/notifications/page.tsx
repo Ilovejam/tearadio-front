@@ -12,12 +12,12 @@ const Notifications = () => {
   }, []);
 
   const fetchPosts = async () => {
-    const response = await axios.get('https://tearadio-backend.vercel.app/posts');
+    const response = await axios.get('http://localhost:3000/posts');
     setPosts(response.data);
   };
 
   const handleClear = async (id) => {
-    await axios.delete(`https://tearadio-backend.vercel.app/posts/${id}`);
+    await axios.delete(`http://localhost:3000/posts/${id}`);
     fetchPosts();
   };
 
@@ -28,7 +28,6 @@ const Notifications = () => {
         {posts.map((post, index) => (
           <div key={index} className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto my-4 max-w-md md:max-w-2xl">
             <div className="flex items-start px-4 py-6">
-              // eslint-disable-next-line @next/next/no-img-element
               <img className="w-12 h-12 rounded-full object-cover mr-4 shadow" src={post.avatar} alt="avatar" />
               <div className="">
                 <div className="flex items-center justify-between">
