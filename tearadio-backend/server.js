@@ -5,20 +5,34 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;  // Eğer PORT çevre değişkeni tanımlıysa onu kullan, değilse 3000 portunu kullan
 const mailjetTransport = require('nodemailer-mailjet-transport');
-const mailjet = require('node-mailjet').connect('7bbeb04b3e4eaf4beb93a606721c71d4', 'f371e106f4ff533448ddb950742de0ea');
 
 
+const corsOptions = {
+  origin: 'https://tearadio-front-e9ulx7qj4-ilovejams-projects.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // İzin verilen HTTP metodları
+  credentials: true, // Eğer response'un `Access-Control-Allow-Credentials` header'ını true olarak ayarlamak istiyorsanız
+  optionsSuccessStatus: 200 // Bazı eski tarayıcılar için
+};
+
+app.use(cors(corsOptions));
 
 
 const transporter = nodemailer.createTransport(mailjetTransport({
   auth: {
-    apiKey: '7bbeb04b3e4eaf4beb93a606721c71d4', // API Anahtarınız
-    apiSecret: 'f371e106f4ff533448ddb950742de0ea' // Gizli Anahtarınız
+    apiKey: process.env.MAILJET_API_KEY,
+    apiSecret:  process.env.MAILJET_API_KEY,
+
   }
 }));
 const post = req.body;
   posts.push(post);
   res.status(201).send(post);
+
+const mailjet = require('node-mailjet').connect(
+  process.env.MAILJET_API_KEY,
+  process.env.MAILJET_API_SECRET
+);
+
 
 
 app.use(cors());
@@ -46,10 +60,6 @@ app.post('/posts', (req, res) => {
           {
             "Email": "omelihtolunay@gmail.com", // Gerçek alıcı e-posta adresini kullanın
             "Name": "Osman"
-          },
-          {
-            "Email": "freddie@oaagency.com", // Gerçek alıcı e-posta adresini kullanın
-            "Name": "Freddie Brown"
           }
         ],
         "Subject": "Check tearadio.co!",
@@ -84,6 +94,9 @@ app.delete('/posts/:id', (req, res) => {
   const { id } = req.params;
   posts = posts.filter(post => post.id !== id);
   res.status(200).send('Post deleted');
+});
+app.get('/test', (req, res) => {
+  res.send('Yeah');
 });
 
 
