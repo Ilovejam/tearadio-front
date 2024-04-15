@@ -28,9 +28,9 @@ const IdCardStaff: React.FC<MemberCardProps> = ({
       >
         {/* Logo with transparent background and shadow */}
         <div className="absolute bottom-8 left-4 p-2" style={{ background: 'rgba(255, 255, 255, 0.2)', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.5)', borderRadius: '10px' }}>
-  <Link href="https://park14.com/" passHref>
+  <Link href="https://thebulldog.com/" passHref>
       <Image
-        src="https://pbs.twimg.com/profile_images/610939586571825152/8JWXGIFM_400x400.jpg"
+        src="https://i.ibb.co/561xXm6/bulldog-amsterdam-logo-kds0yv7qmsjjgwh3.png"
         alt="Park Logo"
         width={40}
         height={40}
@@ -39,7 +39,7 @@ const IdCardStaff: React.FC<MemberCardProps> = ({
 </div>
 
 
-        <div className="text-xl mb-2">THE PARK AT 14TH</div>
+        <div className="text-xl mb-2">THE BULLDOG</div>
         <div className="text-5xl font-semibold mb-2">{membershipNumber}</div>
         <div className="text-sm mb-4">Staff Number</div>
         <div className="text-3xl font-semibold mb-2">{memberName}</div>
@@ -67,14 +67,12 @@ const IdCardStaff: React.FC<MemberCardProps> = ({
           </div>
         )}
       </div>
-      <div className="flex justify-center items-center mt-4 border-2 border-blue-500 rounded-full w-12 h-12"> {/* Circular div with blue border */}
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="blue" className="w-6 h-6"> {/* SVG with blue stroke */}
-    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-  </svg>
+      <div className="flex justify-center items-center mt-4 w-12 h-2"> {/* Circular div with blue border */}
+  
 </div>
 
 
-      <p>Tap to Scan</p>
+      <p>Click QR to scan</p>
     </div>
   );
 };

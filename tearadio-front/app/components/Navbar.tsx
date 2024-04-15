@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
           {/* Sol taraftaki QR ikonu */}
           <Link href='/'>
             <Image 
-              src="https://pbs.twimg.com/profile_images/610939586571825152/8JWXGIFM_400x400.jpg" 
+              src="https://i.ibb.co/561xXm6/bulldog-amsterdam-logo-kds0yv7qmsjjgwh3.png" 
               alt="Logo"
               className="h-10 w-10 object-cover rounded-full cursor-pointer" 
               width={400}
