@@ -3,9 +3,14 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
+interface Post {
+  avatar: string;
+  author: string;
+  content: string;
+}
 
 const Notifications = () => {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     fetchPosts();
