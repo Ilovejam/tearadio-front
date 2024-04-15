@@ -1,4 +1,3 @@
-'use client'
 import React, { useState } from 'react';
 import { PhoneIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, ChevronLeftIcon } from '@heroicons/react/20/solid';
@@ -36,7 +35,7 @@ const SignUp = () => {
             className='mb-4'
           />
           <p className='text-gray-600 text-xs italic mt-2 mb-4'>
-            We'll send you a verification code by text message so you can confirm that it's really you.
+            We&apos;ll send you a verification code by text message so you can confirm that it&apos;s really you.
           </p>
           <button
             type='submit'
