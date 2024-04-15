@@ -21,10 +21,11 @@ const Notifications = () => {
     setPosts(response.data);
   };
 
-  const handleClear = async (id) => {
+  const handleClear = async (id: string) => {
     await axios.delete(`https://tearadio-front-p3u091gpq-ilovejams-projects.vercel.app/posts/${id}`);
     fetchPosts();
   };
+  
 
   const handleClearAll = async () => {
     await Promise.all(posts.map(post => axios.delete(`https://tearadio-front-p3u091gpq-ilovejams-projects.vercel.app/posts/${post.id}`)));
