@@ -7,7 +7,7 @@ const CardsSlider = ({ cards }: { cards: any[] }) => {
   const sliderRef = useRef();
 
   // Touch hareketlerini yakalayacak ve yatay kaydırmayı sağlayacak fonksiyon
-  const handleDrag = (e) => {
+  const handleDrag = (e:any) => {
     // Kaydırma hareketi burada tanımlanacak
   };
 
