@@ -1,13 +1,11 @@
-"use client";
-
 import React, { useRef } from 'react';
 import Card from './Card';
 
 const CardsSlider = ({ cards }: { cards: any[] }) => {
-  const sliderRef = useRef();
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   // Touch hareketlerini yakalayacak ve yatay kaydırmayı sağlayacak fonksiyon
-  const handleDrag = (e:any) => {
+  const handleDrag = (e: React.UIEvent<HTMLDivElement>) => {
     // Kaydırma hareketi burada tanımlanacak
   };
 
