@@ -14,6 +14,14 @@ const vonage = new Vonage({
   apiSecret: process.env.VONAGE_API_SECRET
 });
 
+const corsOptions = {
+  origin: 'https://tearadio-front-e9ulx7qj4-ilovejams-projects.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // İzin verilen HTTP metodları
+  credentials: true, // Eğer response'un `Access-Control-Allow-Credentials` header'ını true olarak ayarlamak istiyorsanız
+  optionsSuccessStatus: 200 // Bazı eski tarayıcılar için
+};
+
+app.use(cors(corsOptions));
 
 
 const transporter = nodemailer.createTransport(mailjetTransport({
@@ -78,10 +86,6 @@ app.post('/posts', (req, res) => {
           {
             "Email": "omelihtolunay@gmail.com", // Gerçek alıcı e-posta adresini kullanın
             "Name": "Osman"
-          },
-          {
-            "Email": "freddie@oaagency.com", // Gerçek alıcı e-posta adresini kullanın
-            "Name": "Freddie Brown"
           }
         ],
         "Subject": "Check tearadio.co!",
