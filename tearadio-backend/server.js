@@ -127,6 +127,9 @@ app.delete('/posts/:id', (req, res) => {
   posts = posts.filter(post => post.id !== id);
   res.status(200).send('Post deleted');
 });
+app.get('/test', (req, res) => {
+  res.send('Yeah');
+});
 
 
 // Vercel için özel olarak ayarlanmış bir dinleyici gerekli değildir, bu yüzden bu kodu kaldırabilirsiniz.
