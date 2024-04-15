@@ -3,7 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
+
+// Güncellenmiş Post arayüzü
 interface Post {
+  id: string; // id özelliği ekleniyor, türü string varsayıldı.
   avatar: string;
   author: string;
   content: string;
@@ -25,7 +28,6 @@ const Notifications = () => {
     await axios.delete(`https://tearadio-front-p3u091gpq-ilovejams-projects.vercel.app/posts/${id}`);
     fetchPosts();
   };
-  
 
   const handleClearAll = async () => {
     await Promise.all(posts.map(post => axios.delete(`https://tearadio-front-p3u091gpq-ilovejams-projects.vercel.app/posts/${post.id}`)));
@@ -53,7 +55,7 @@ const Notifications = () => {
             </div>
           ))
         ) : (
-          <p className="text-center text-gray-700 mt-4">No notification</p>
+          <p className="text-center text-gray-700 mt-4">No notifications</p>
         )}
         {posts.length > 0 && (
           <button 
