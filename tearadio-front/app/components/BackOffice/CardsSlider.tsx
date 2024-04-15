@@ -1,8 +1,9 @@
-"use client"
+"use client";
 
 import React, { useRef } from 'react';
 import Card from './Card';
-const CardsSlider = ({ cards }) => {
+
+const CardsSlider = ({ cards }: { cards: any[] }) => {
   const sliderRef = useRef();
 
   // Touch hareketlerini yakalayacak ve yatay kaydırmayı sağlayacak fonksiyon
@@ -26,6 +27,5 @@ const CardsSlider = ({ cards }) => {
     </div>
   );
 };
-
 
 export default CardsSlider;
