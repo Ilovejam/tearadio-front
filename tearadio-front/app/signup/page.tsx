@@ -6,7 +6,7 @@ import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
 const SignUp = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ const SignUp = () => {
             placeholder='Enter phone number'
             className='mb-4'
           />
-          <p className='text-grey-dark text-xs italic mt-2 mb-4'>
+          <p className='text-gray-600 text-xs italic mt-2 mb-4'>
             We'll send you a verification code by text message so you can confirm that it's really you.
           </p>
           <button
