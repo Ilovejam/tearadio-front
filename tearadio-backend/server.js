@@ -7,7 +7,6 @@ const app = express();
 const port = process.env.PORT || 3000;  // Eğer PORT çevre değişkeni tanımlıysa onu kullan, değilse 3000 portunu kullan
 const nodemailer = require('nodemailer');
 const mailjetTransport = require('nodemailer-mailjet-transport');
-const mailjet = require('node-mailjet').connect('7bbeb04b3e4eaf4beb93a606721c71d4', 'f371e106f4ff533448ddb950742de0ea');
 
 const vonage = new Vonage({
   apiKey: process.env.VONAGE_API_KEY,
@@ -31,6 +30,12 @@ const transporter = nodemailer.createTransport(mailjetTransport({
 
   }
 }));
+
+const mailjet = require('node-mailjet').connect(
+  process.env.MAILJET_API_KEY,
+  process.env.MAILJET_API_SECRET
+);
+
 
 
 app.use(cors());
