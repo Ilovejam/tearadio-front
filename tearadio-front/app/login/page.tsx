@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const router = useRouter(); // Router'ı kullanmak için tanımlayın
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     
     // Telefon numarasını ve şifreyi backend'e gönder
