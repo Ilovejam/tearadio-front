@@ -26,8 +26,9 @@ app.use(cors(corsOptions));
 
 const transporter = nodemailer.createTransport(mailjetTransport({
   auth: {
-    apiKey: '7bbeb04b3e4eaf4beb93a606721c71d4', // API Anahtarınız
-    apiSecret: 'f371e106f4ff533448ddb950742de0ea' // Gizli Anahtarınız
+    apiKey: process.env.MAILJET_API_KEY,
+    apiSecret:  process.env.MAILJET_API_KEY,
+
   }
 }));
 
