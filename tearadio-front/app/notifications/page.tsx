@@ -4,34 +4,42 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
 
-// Güncellenmiş Post arayüzü
-interface Post {
-  id: string; // id özelliği ekleniyor, türü string varsayıldı.
-  avatar: string;
-  author: string;
-  content: string;
-}
-
 const Notifications = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState([]);
+  const apiUrl = 'https://bulldog-backend.vercel.app/posts';
 
   useEffect(() => {
     fetchPosts();
   }, []);
 
   const fetchPosts = async () => {
-    const response = await axios.get('https://tearadio-front-p3u091gpq-ilovejams-projects.vercel.app/posts');
-    setPosts(response.data);
+    try {
+      const response = await axios.get(apiUrl);
+      setPosts(response.data);
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+      // Burada bir hata mesajı veya kullanıcıya bilgi verme işlemi yapabilirsiniz.
+    }
   };
 
-  const handleClear = async (id: string) => {
-    await axios.delete(`https://tearadio-front-p3u091gpq-ilovejams-projects.vercel.app/posts/${id}`);
-    fetchPosts();
+  const handleClear = async (id) => {
+    try {
+      await axios.delete(`${apiUrl}/${id}`);
+      fetchPosts();
+    } catch (error) {
+      console.error("Error deleting post:", error);
+      // Hata işleme kodunu buraya ekleyin
+    }
   };
 
   const handleClearAll = async () => {
-    await Promise.all(posts.map(post => axios.delete(`https://tearadio-front-p3u091gpq-ilovejams-projects.vercel.app/posts/${post.id}`)));
-    fetchPosts();  // Re-fetch posts after all deletions
+    try {
+      await Promise.all(posts.map(post => axios.delete(`${apiUrl}/${post.id}`)));
+      fetchPosts();  // Re-fetch posts after all deletions
+    } catch (error) {
+      console.error("Error clearing all posts:", error);
+      // Hata işleme kodunu buraya ekleyin
+    }
   };
 
   return (
@@ -50,6 +58,12 @@ const Notifications = () => {
                   <p className="mt-3 text-gray-700 text-sm">
                     {post.content}
                   </p>
+                  <button 
+                    onClick={() => handleClear(post.id)}
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded my-1"
+                  >
+                    Clear
+                  </button>
                 </div>
               </div>
             </div>
