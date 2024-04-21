@@ -27,7 +27,6 @@ const defaultPosts: Post[] = [
 ];
 
 const Notifications = () => {
-  // API'den gelen postları depolamak için ayrı bir durum kullanın
   const [apiPosts, setApiPosts] = useState<Post[]>([]);
   const apiUrl = 'https://bulldog-backend.vercel.app/posts';
 
@@ -35,7 +34,7 @@ const Notifications = () => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get<Post[]>(apiUrl);
-        setApiPosts(response.data); // API'den alınan postları apiPosts durumunda saklayın
+        setApiPosts(response.data);
       } catch (error) {
         console.error("Error fetching posts:", error);
       }
@@ -44,14 +43,12 @@ const Notifications = () => {
     fetchPosts();
   }, [apiUrl]);
 
-  // Tüm postları (varsayılanlar ve API'den gelenler) tek bir listede birleştirin
   const allPosts = [...defaultPosts, ...apiPosts];
 
   const handleClear = async (id: string) => {
     try {
       await axios.delete(`${apiUrl}/${id}`);
-      // Sadece API'den gelen postları filtreleyin, varsayılan postlar sabit kalsın
-      setApiPosts(apiPosts.filter((post) => post.id !== id));
+      setApiPosts(currentApiPosts => currentApiPosts.filter((post) => post.id !== id));
     } catch (error) {
       console.error("Error deleting post:", error);
     }
@@ -59,21 +56,19 @@ const Notifications = () => {
 
   const handleClearAll = async () => {
     try {
-      // Sadece API'den gelen postları silmeye çalışın
-      await Promise.all(apiPosts.map((post) => axios.delete(`${apiUrl}/${post.id}`)));
-      setApiPosts([]); // API postlarını temizleyin
+      await Promise.all(allPosts.map((post) => axios.delete(`${apiUrl}/${post.id}`)));
+      setApiPosts([]);
     } catch (error) {
       console.error("Error clearing all posts:", error);
     }
   };
 
-
   return (
     <div className="bg-white">
       <Navbar />
       <div className="flex flex-col items-center px-4 py-2 mt-20">
-        {posts.length > 0 ? (
-          posts.map((post) => (
+        {allPosts.length > 0 ? (
+          allPosts.map((post) => (
             <div key={post.id} className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto my-4 max-w-4xl w-full">
               <div className="flex items-start px-4 py-6">
                 <img className="w-12 h-12 rounded-full object-cover mr-4 shadow" src={post.avatar} alt="avatar" />
@@ -97,7 +92,7 @@ const Notifications = () => {
         ) : (
           <p className="text-center text-gray-700 mt-4">No notifications</p>
         )}
-        {posts.length > 0 && (
+        {allPosts.length > 0 && (
           <button 
             onClick={handleClearAll}
             className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-8 rounded my-4"
