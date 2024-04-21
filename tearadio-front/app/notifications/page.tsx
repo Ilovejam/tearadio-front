@@ -27,31 +27,31 @@ const defaultPosts: Post[] = [
 ];
 
 const Notifications = () => {
-  const [posts, setPosts] = useState<Post[]>(defaultPosts);
+  // API'den gelen postları depolamak için ayrı bir durum kullanın
+  const [apiPosts, setApiPosts] = useState<Post[]>([]);
   const apiUrl = 'https://bulldog-backend.vercel.app/posts';
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get<Post[]>(apiUrl);
-        setPosts(response.data);
+        setApiPosts(response.data); // API'den alınan postları apiPosts durumunda saklayın
       } catch (error) {
         console.error("Error fetching posts:", error);
       }
     };
 
     fetchPosts();
-
-    // Eğer 4 dakikada bir yenilemek istiyorsanız, aşağıdaki satırı yorumdan kaldırın.
-    // const intervalId = setInterval(fetchPosts, 240000); // 4 dakika = 240000 milisaniye
-
-    // return () => clearInterval(intervalId); // Bu, component unmount olduğunda intervali temizler.
   }, [apiUrl]);
+
+  // Tüm postları (varsayılanlar ve API'den gelenler) tek bir listede birleştirin
+  const allPosts = [...defaultPosts, ...apiPosts];
 
   const handleClear = async (id: string) => {
     try {
       await axios.delete(`${apiUrl}/${id}`);
-      setPosts(posts.filter((post) => post.id !== id));
+      // Sadece API'den gelen postları filtreleyin, varsayılan postlar sabit kalsın
+      setApiPosts(apiPosts.filter((post) => post.id !== id));
     } catch (error) {
       console.error("Error deleting post:", error);
     }
@@ -59,12 +59,14 @@ const Notifications = () => {
 
   const handleClearAll = async () => {
     try {
-      await Promise.all(posts.map((post) => axios.delete(`${apiUrl}/${post.id}`)));
-      setPosts([]);
+      // Sadece API'den gelen postları silmeye çalışın
+      await Promise.all(apiPosts.map((post) => axios.delete(`${apiUrl}/${post.id}`)));
+      setApiPosts([]); // API postlarını temizleyin
     } catch (error) {
       console.error("Error clearing all posts:", error);
     }
   };
+
 
   return (
     <div className="bg-white">
