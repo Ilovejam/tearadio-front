@@ -22,15 +22,16 @@ const Notifications = () => {
     }
   };
 
-  const handleClear = async (id) => {
-    try {
-      await axios.delete(`${apiUrl}/${id}`);
-      fetchPosts();
-    } catch (error) {
-      console.error("Error deleting post:", error);
-      // Hata işleme kodunu buraya ekleyin
-    }
-  };
+  const handleClear = async (id: string) => {
+  try {
+    await axios.delete(`${apiUrl}/${id}`);
+    fetchPosts();
+  } catch (error) {
+    console.error("Error deleting post:", error);
+    // Hata işleme kodunu buraya ekleyin
+  }
+};
+
 
   const handleClearAll = async () => {
     try {
