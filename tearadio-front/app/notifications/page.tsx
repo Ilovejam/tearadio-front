@@ -11,27 +11,47 @@ type Post = {
   content: string;
 };
 
+const defaultPosts: Post[] = [
+  {
+    id: "1",
+    author: "John Doe",
+    avatar: "https://via.placeholder.com/150",
+    content: "This is the first post",
+  },
+  {
+    id: "2",
+    author: "Jane Doe",
+    avatar: "https://via.placeholder.com/150",
+    content: "This is the second post",
+  },
+];
+
 const Notifications = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>(defaultPosts);
   const apiUrl = 'https://bulldog-backend.vercel.app/posts';
 
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get<Post[]>(apiUrl);
+        setPosts(response.data);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
 
-  const fetchPosts = async () => {
-    try {
-      const response = await axios.get<Post[]>(apiUrl);
-      setPosts(response.data);
-    } catch (error) {
-      console.error("Error fetching posts:", error);
-    }
-  };
+    fetchPosts();
+
+    // Eğer 4 dakikada bir yenilemek istiyorsanız, aşağıdaki satırı yorumdan kaldırın.
+    // const intervalId = setInterval(fetchPosts, 240000); // 4 dakika = 240000 milisaniye
+
+    // return () => clearInterval(intervalId); // Bu, component unmount olduğunda intervali temizler.
+  }, [apiUrl]);
 
   const handleClear = async (id: string) => {
     try {
       await axios.delete(`${apiUrl}/${id}`);
-      fetchPosts();
+      setPosts(posts.filter((post) => post.id !== id));
     } catch (error) {
       console.error("Error deleting post:", error);
     }
@@ -40,7 +60,7 @@ const Notifications = () => {
   const handleClearAll = async () => {
     try {
       await Promise.all(posts.map((post) => axios.delete(`${apiUrl}/${post.id}`)));
-      fetchPosts();
+      setPosts([]);
     } catch (error) {
       console.error("Error clearing all posts:", error);
     }
