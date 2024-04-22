@@ -37,6 +37,7 @@ const Notifications = () => {
         setApiPosts(response.data);
       } catch (error) {
         console.error("Error fetching posts:", error);
+        alert('Failed to fetch posts from the server'); // Hata yönetimi için basit bir uyarı
       }
     };
 
@@ -51,15 +52,18 @@ const Notifications = () => {
       setApiPosts(currentApiPosts => currentApiPosts.filter((post) => post.id !== id));
     } catch (error) {
       console.error("Error deleting post:", error);
+      alert('Failed to delete the post'); // Hata yönetimi
     }
   };
 
   const handleClearAll = async () => {
     try {
-      await Promise.all(allPosts.map((post) => axios.delete(`${apiUrl}/${post.id}`)));
-      setApiPosts([]);
+      const apiDeletePromises = apiPosts.map((post) => axios.delete(`${apiUrl}/${post.id}`));
+      await Promise.all(apiDeletePromises);
+      setApiPosts([]); // API postlarını sıfırla
     } catch (error) {
       console.error("Error clearing all posts:", error);
+      alert('Failed to clear all posts'); // Hata yönetimi
     }
   };
 
@@ -73,12 +77,8 @@ const Notifications = () => {
               <div className="flex items-start px-4 py-6">
                 <img className="w-12 h-12 rounded-full object-cover mr-4 shadow" src={post.avatar} alt="avatar" />
                 <div className="flex-1">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-lg font-semibold text-gray-900 -mt-1">{post.author}</h2>
-                  </div>
-                  <p className="mt-3 text-gray-700 text-sm">
-                    {post.content}
-                  </p>
+                  <h2 className="text-lg font-semibold text-gray-900 -mt-1">{post.author}</h2>
+                  <p className="mt-3 text-gray-700 text-sm">{post.content}</p>
                   <button 
                     onClick={() => handleClear(post.id)}
                     className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded my-1"
