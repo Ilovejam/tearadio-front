@@ -37,12 +37,19 @@ const Notifications = () => {
         setApiPosts(response.data);
       } catch (error) {
         console.error("Error fetching posts:", error);
-        alert('Failed to fetch posts from the server'); // Hata yönetimi için basit bir uyarı
       }
     };
 
+    // İlk yüklemede postları hemen al
     fetchPosts();
+
+    // Her 10 saniyede bir postları yenile
+    const intervalId = setInterval(fetchPosts, 10000);
+
+    // Cleanup fonksiyonu
+    return () => clearInterval(intervalId);
   }, [apiUrl]);
+
 
   const allPosts = [...defaultPosts, ...apiPosts];
 
