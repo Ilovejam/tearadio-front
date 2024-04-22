@@ -31,24 +31,21 @@ const Notifications = () => {
   const apiUrl = 'https://bulldog-backend.vercel.app/posts';
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await axios.get<Post[]>(apiUrl);
-        setApiPosts(response.data);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-      }
-    };
+  const fetchPosts = async () => {
+    try {
+      const response = await axios.get<Post[]>(apiUrl);
+      setApiPosts(response.data); 
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    }
+  };
 
-    // İlk yüklemede postları hemen al
-    fetchPosts();
+  fetchPosts(); 
 
-    // Her 10 saniyede bir postları yenile
-    const intervalId = setInterval(fetchPosts, 10000);
+  const intervalId = setInterval(fetchPosts, 10000); 
 
-    // Cleanup fonksiyonu
-    return () => clearInterval(intervalId);
-  }, [apiUrl]);
+  return () => clearInterval(intervalId); 
+}, [apiUrl]);
 
 
   const allPosts = [...defaultPosts, ...apiPosts];
