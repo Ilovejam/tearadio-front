@@ -43,7 +43,7 @@ const Notifications = () => {
   fetchPosts(); 
 
   const intervalId = setInterval(fetchPosts, 10000); 
-
+  console.log(response.data)
   return () => clearInterval(intervalId); 
 }, [apiUrl]);
 
