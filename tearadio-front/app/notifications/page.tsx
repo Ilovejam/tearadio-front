@@ -14,15 +14,21 @@ type Post = {
 const defaultPosts: Post[] = [
   {
     id: "1",
-    author: "John Doe",
-    avatar: "https://via.placeholder.com/150",
+    author: "Natallie",
+    avatar: "https://i.ibb.co/561xXm6/bulldog-amsterdam-logo-kds0yv7qmsjjgwh3.png",
     content: "This is the first post",
   },
   {
     id: "2",
-    author: "Jane Doe",
-    avatar: "https://via.placeholder.com/150",
+    author: "Freddie",
+    avatar: "https://s3.amazonaws.com/media.mixrank.com/profilepic/0f438680c5ce5190be1f86519aa2cc44",
     content: "This is the second post",
+  },
+  {
+    id: "3",
+    author: "Freddie",
+    avatar: "https://s3.amazonaws.com/media.mixrank.com/profilepic/0f438680c5ce5190be1f86519aa2cc44",
+    content: "This is a push-notification from the owner of your favorite shop. Texts and emails are outdated",
   },
 ];
 
@@ -43,7 +49,6 @@ const Notifications = () => {
   fetchPosts(); 
 
   const intervalId = setInterval(fetchPosts, 10000); 
-  console.log(response.data)
   return () => clearInterval(intervalId); 
 }, [apiUrl]);
 
@@ -78,20 +83,20 @@ const Notifications = () => {
         {allPosts.length > 0 ? (
           allPosts.map((post) => (
             <div key={post.id} className="flex bg-white shadow-lg rounded-lg mx-4 md:mx-auto my-4 max-w-4xl w-full">
-              <div className="flex items-start px-4 py-6">
-                <img className="w-12 h-12 rounded-full object-cover mr-4 shadow" src={post.avatar} alt="avatar" />
-                <div className="flex-1">
-                  <h2 className="text-lg font-semibold text-gray-900 -mt-1">{post.author}</h2>
-                  <p className="mt-3 text-gray-700 text-sm">{post.content}</p>
-                  <button 
-                    onClick={() => handleClear(post.id)}
-                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded my-1"
-                  >
-                    Clear
-                  </button>
-                </div>
+            <div className="flex items-start px-4 py-6">
+              <img className="w-12 h-12 rounded-full object-cover mr-4 shadow" src={post.avatar} alt="avatar" />
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold text-gray-900 -mt-1">{post.author}</h2>
+                <p className="mt-3 text-gray-700 text-sm">{post.content}</p>
+                <button 
+                  onClick={() => handleClear(post.id)}
+                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded my-1"
+                >
+                  Clear
+                </button>
               </div>
             </div>
+          </div>
           ))
         ) : (
           <p className="text-center text-gray-700 mt-4">No notifications</p>

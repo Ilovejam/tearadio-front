@@ -3,7 +3,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { BellIcon, CogIcon, QrCodeIcon,  UserGroupIcon } from '@heroicons/react/24/outline'; // Bell ve Cog ikonlarını ekliyorum
+import { BellIcon, CogIcon, QrCodeIcon,  UserGroupIcon, UserIcon } from '@heroicons/react/24/outline'; // Bell ve Cog ikonlarını ekliyorum
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
           {/* Sol taraftaki QR ikonu */}
           <Link href='/'>
             <Image 
-              src="https://i.ibb.co/561xXm6/bulldog-amsterdam-logo-kds0yv7qmsjjgwh3.png" 
+              src="https://i.ibb.co/mGD6t8d/TR-Logo-copy-2.png" 
               alt="Logo"
               className="h-10 w-10 object-cover rounded-full cursor-pointer" 
               width={400}
@@ -30,6 +30,10 @@ const Navbar: React.FC = () => {
           </Link>
           {/* Sağ taraftaki ikonlar */}
           <div className="flex items-center">
+          <Link href='/staff-card'>
+              <UserIcon className="h-6 w-6 text-black cursor-pointer mx-2" />
+
+            </Link>
             <Link href='/personal'>
               <UserGroupIcon className="h-6 w-6 text-black cursor-pointer mx-2" />
 
